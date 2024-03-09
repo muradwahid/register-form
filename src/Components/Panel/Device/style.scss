@@ -1,0 +1,15 @@
+.single-device {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 22px;
+    width: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  cursor: pointer;
+  span.dashicons{
+    font-size: 18px;
+    margin-top: 2px;
+  }
+}

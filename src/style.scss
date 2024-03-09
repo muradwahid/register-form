@@ -1,0 +1,326 @@
+$primaryColor: #4527a4;
+
+// Common CSS
+html {
+  scroll-behavior: smooth;
+}
+
+// Dashicon
+.dashicons {
+  font-family: dashicons !important;
+}
+
+// Block Name
+.wp-block-rgfr-register-form,
+.wp-block-rgfr-hello {
+  * {
+    box-sizing: border-box;
+  }
+  display: flex;
+  .rgfr-register-form-main-wrapper {
+    .rgfr-register-form {
+      display: flex;
+      box-sizing: border-box;
+      .rgfr-registerForm-container {
+        .rgfr-register-form-wrapper {
+          width: inherit;
+          box-sizing: border-box;
+          padding: 10px;
+          .rgfr-register-logo-wrapper {
+            box-sizing: border-box;
+            display: flex;
+            gap: 10px;
+            .rgrf-register-logo {
+              display: flex;
+            }
+            .rgfr-register-heading {
+              h4 {
+                margin: 0;
+              }
+              .rgfr-register-subHeading {
+                margin: 0;
+                margin-top: 5px;
+              }
+            }
+          }
+          .rgfr-inputField-wrapper {
+            box-sizing: border-box;
+            .rgfr-register-input-field {
+              display: grid;
+              gap: 5px;
+              margin-bottom: 10px;
+              .passLength {
+                display: flex;
+                margin-top: 5px;
+                .rgfr-strengthMeter {
+                  margin-right: 2px;
+                }
+              }
+              .passLength div {
+                background: rgb(165, 165, 165);
+                height: 5px;
+                width: 100%;
+                border-radius: 2px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.5s ease-in-out;
+              }
+              .rgfr-passStrengthTextWrapper {
+              }
+              .rgfr-customValidation {
+                font-size: 11px;
+                color: #ff0000;
+              }
+              .rgfr-customValidation.hide {
+                display: none;
+              }
+              .passLength {
+                .veryWeak {
+                  background-color: blue;
+                }
+                .weak {
+                  background-color: aqua;
+                }
+                .medium {
+                  background-color: blueviolet;
+                }
+                .strong {
+                  background-color: brown;
+                }
+              }
+              .rgfr-passStrengthTextWrapper {
+                .veryWeak-text {
+                  color: blue;
+                }
+                .weak-text {
+                  color: aqua;
+                }
+                .medium-text {
+                  color: blueviolet;
+                }
+                .strong-text {
+                  color: brown;
+                }
+              }
+
+              .rgfr-register-input-label {
+                .rgfr-requiredMark {
+                  color: #ff0000;
+                }
+              }
+              .rgfr-inputField {
+                position: relative;
+                input {
+                  width: 100%;
+                  padding-top: 10px;
+                  padding-bottom: 10px;
+                  border-radius: 3px;
+                  box-shadow: none;
+                }
+                .rgfr-inputField-icon {
+                  position: absolute;
+                  width: 16px;
+                  left: 8px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+                .register-eyeIcon {
+                  position: absolute;
+                  width: 16px;
+                  right: 8px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
+              .rgfr-input-errorMessage {
+                color: red;
+                font-size: 11px;
+              }
+            }
+          }
+          .rgfr-registerFormBtn-wrapper {
+            margin-top: 10px;
+            display: flex;
+            .rgfr-register-loader-wrapper {
+              position: relative;
+              display: flex;
+
+              .rgfr-signupBtn {
+                background-color: #4527a4;
+                color: white;
+                border: none;
+                font-size: 15px;
+                border-radius: 4px;
+                transition: all 0.3s;
+                padding: 12px 25px;
+              }
+              .rgfr-loader {
+                position: absolute;
+                top: 50%;
+                --d: 7px;
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                color: #000000;
+                box-shadow: calc(1 * var(--d)) calc(0 * var(--d)) 0 0,
+                  calc(0.707 * var(--d)) calc(0.707 * var(--d)) 0 0.2px,
+                  calc(0 * var(--d)) calc(1 * var(--d)) 0 0.4px,
+                  calc(-0.707 * var(--d)) calc(0.707 * var(--d)) 0 0.6px,
+                  calc(-1 * var(--d)) calc(0 * var(--d)) 0 0.8px,
+                  calc(-0.707 * var(--d)) calc(-0.707 * var(--d)) 0 1px,
+                  calc(0 * var(--d)) calc(-1 * var(--d)) 0 1.2px;
+                animation: rgfrLoader 1.3s infinite steps(8);
+              }
+
+              @keyframes rgfrLoader {
+                100% {
+                  transform: rotate(1turn);
+                }
+              }
+            }
+            .rgfr-signInBtn-wrapper {
+              display: flex;
+              align-items: center;
+              gap: 7px;
+              a {
+                text-decoration: none;
+                transition: all 0.2s ease-in-out;
+              }
+            }
+          }
+          .rgfr-checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            .container {
+              display: block;
+              position: relative;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              user-select: none;
+              height: 17px;
+              width: 17px;
+            }
+            .container input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+
+            .checkmark {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 17px;
+              width: 17px;
+              border-radius: 5px;
+              border: 1px solid #818181;
+              background: white;
+            }
+
+            .container input:checked ~ .checkmark {
+              background-color: #00f;
+              color: #2196f3;
+            }
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+            .container input:checked ~ .checkmark:after {
+              display: block;
+            }
+            .container .checkmark:after {
+              left: 5px;
+              top: 2px;
+              width: 4px;
+              height: 7px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+          }
+        }
+        .rgfr-separator {
+          margin-top: 20px;
+          .rgfr-separatorText {
+            display: flex;
+            justify-content: center;
+          }
+          hr {
+            background-color: #808080;
+            height: 1px;
+          }
+        }
+        .rgfr-socialSignup-warning {
+          width: 222px;
+          font-size: 12px;
+          margin: 0 auto;
+          text-align: center;
+          background: #ebc4c4;
+          padding: 11px 5px;
+          border-radius: 5px;
+        }
+        .rgfr-social-signUpBtn {
+          display: flex;
+          flex-direction: column;
+          row-gap: 15px;
+          margin-top: 15px;
+          .rgfr-googleSignUp {
+            display: flex;
+            justify-content: center;
+            .rgfr-googleBtn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 5px;
+              padding: 10px 0px;
+              width: 222px;
+              border-radius: 5px;
+              // box-shadow: 0px 0px 8px #ccc;
+              border: 1px solid #ccc;
+              cursor: pointer;
+              .rgfr-googleIcon {
+                font-size: 25px;
+              }
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+          .rgfr-facebookSignUp {
+            display: flex;
+            justify-content: center;
+            .rgfr-facebookBtn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 5px;
+              padding: 10px 0px;
+              width: 222px;
+              border-radius: 5px;
+              // box-shadow: 0px 0px 8px #ccc;
+              border: 1px solid #ccc;
+              cursor: pointer;
+              .rgfr-facebookIcon {
+                font-size: 25px;
+                color: #0866ff;
+              }
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      .rgfr-register-image-wrapper {
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

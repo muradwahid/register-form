@@ -1,0 +1,425 @@
+{
+  "apiVersion": "1",
+  "name": "rgfr/register-form",
+  "title": "Register Form",
+  "description": "Description of Register Form.",
+  "category": "widgets",
+  "keywords": ["hello", "block", "gutenberg"],
+  "textdomain": "register-form",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": ""
+    },
+    "cId": {
+      "type": "string",
+      "default": ""
+    },
+    "general": {
+      "type": "object",
+      "default": {
+        "containerBox": {
+          "width": { "desktop": "620px", "tablet": "620px", "mobile": "100%" },
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "alignment":{ "desktop": "center", "tablet": "center", "mobile": "center" },
+          "border": {},
+          "bg": { "color": "#0000" },
+          "shadow": []
+        },
+        "formWrapper": {
+          "width": { "desktop": "370px", "tablet": "370px", "mobile": "100%" },
+          "margin": { "desktop": "", "tablet": "", "mobile": "" },
+          "padding": { "desktop": "", "tablet": "", "mobile": "" },
+          "border": {},
+          "bg": {},
+          "shadow": []
+        },
+        "form": {
+          "width": { "desktop": "", "tablet": "", "mobile": "" },
+          "margin": { "desktop": "", "tablet": "", "mobile": "" },
+          "padding": { "desktop": "", "tablet": "", "mobile": "" },
+          "border": {},
+          "bg": {},
+          "shadow": []
+        }
+      }
+    },
+    "formHeader": {
+      "type": "object",
+      "default": {
+        "content": "",
+        "header": {
+          "logo": {
+            "url": {},
+            "resolution": "full",
+            "position": "left",
+            "height": {
+              "desktop": "100px",
+              "tablet": "100px",
+              "mobile": "100px"
+            },
+            "width": {
+              "desktop": "100px",
+              "tablet": "100px",
+              "mobile": "100px"
+            },
+            "margin": { "desktop": "", "tablet": "", "mobile": "" },
+            "padding": { "desktop": "", "tablet": "", "mobile": "" },
+            "border": {},
+            "shadow": {}
+          },
+          "title": {
+            "text": "",
+            "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+            "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+            "color": "",
+            "bg": {},
+            "border": {},
+            "typography": {
+              "fontWeight": 700,
+              "fontSize": { "desktop": 26, "tablet": 26, "mobile": 26 }
+            }
+          },
+          "subTitle": {
+            "text": "",
+            "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+            "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+            "color": "",
+            "bg": {},
+            "border": {},
+            "typography": {}
+          },
+          "width": { "desktop": "", "tablet": "", "mobile": "" },
+          "height": { "desktop": "", "tablet": "", "mobile": "" },
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "border": {},
+          "bg": { "color": "#0000" }
+        },
+        "image": {
+          "desktop": {},
+          "tablet": {},
+          "mobile": {},
+          "url": "",
+          "resolution": "full",
+          "position":{"desktop":"left","tablet":"left","mobile":"top"},
+          "height": { "desktop": "100%", "tablet": "100%", "mobile": "100%" },
+          "width": { "desktop": "250px", "tablet": "250px", "mobile": "250px" },
+          "margin": { "desktop": "", "tablet": "", "mobile": "" },
+          "padding": { "desktop": "", "tablet": "", "mobile": "" },
+          "border": {}
+        },
+        "logo": {
+          "url": {},
+          "resolution": "full",
+          "position": "left",
+          "height": "100px",
+          "width": "100px"
+        }
+      }
+    },
+    "socialSignUp": {
+      "type": "object",
+      "default": {
+        "google": {
+          "show": false,
+          "clientId": "",
+          "text": "Sign up with Google"
+        },
+        "facebook": {
+          "show": false,
+          "clientId": "",
+          "text": "Sign up with Facebook"
+        },
+        "separator": { "show": true, "type": "text", "text": "Or" }
+      }
+    },
+    "formFields": {
+      "type": "object",
+      "default": {
+        "fields": [
+          {
+            "type": "username",
+            "label": { "text": "Username" },
+            "placeholder": { "text": "Username" },
+            "required": false,
+            "width": { "desktop": "100%", "tablet": "100%", "mobile": "100%" },
+            "device": "desktop",
+            "icon": { "url": "" }
+          },
+          {
+            "type": "email",
+            "label": { "text": "Email" },
+            "placeholder": { "text": "Email" },
+            "required": true,
+            "width": { "desktop": "100%", "tablet": "100%", "mobile": "100%" },
+            "device": "desktop",
+            "icon": { "url": "" }
+          },
+          {
+            "type": "password",
+            "label": { "text": "Password" },
+            "placeholder": { "text": "Password" },
+            "required": true,
+            "width": { "desktop": "100%", "tablet": "100%", "mobile": "100%" },
+            "device": "desktop",
+            "icon": { "url": "" }
+          }
+        ],
+        "input": {
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": {
+            "desktop": { "left": "10px" },
+            "tablet": { "left": "10px" },
+            "mobile": { "left": "10px" }
+          },
+          "txtAlign": "left",
+          "color": {
+            "normal": {
+              "text": "",
+              "placeholder": "",
+              "bg": "",
+              "border": { "width": "1px", "color": "#ccc","radius":"3px" }
+            },
+            "focus": {
+              "placeholder": "",
+              "bg": "",
+              "border": { "width": "1px", "color": "#ccc", "radius": "3px" }
+            }
+          },
+          "border": { "normal": { "width": "1px", "color": "#ccc", "radius": "3px" }, "focus": { "width": "1px", "color": "#ccc", "radius": "3px" } },
+          "typography": {}
+        },
+        "showLabel": true,
+        "showRequiredMark": false,
+        "passVisibilityIcon": false,
+        "fieldIcons": false,
+        "showPassStrengthMeter": false,
+        "showPassStrengthText": false,
+        "passStrengthText": "default",
+        "weakPass": true
+      }
+    },
+    "formLabel": {
+      "type": "object",
+      "default": {
+        "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+        "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+        "typography": {},
+        "color": { "text": "", "bg": "" },
+        "border": {}
+      }
+    },
+    "fieldIcons": {
+      "type": "object",
+      "default": {
+        "passVisibility": {
+          "iconSize": { "desktop": "16px", "tablet": "16px", "mobile": "16px" },
+          "openColor": "",
+          "closeColor": "",
+          "vertical": { "desktop": "", "tablet": "", "mobile": "" },
+          "horizontal": { "desktop": "", "tablet": "", "mobile": "" }
+        },
+        "icon": {
+          "iconSize": { "desktop": "16px", "tablet": "16px", "mobile": "16px" },
+          "color": "",
+          "vertical": { "desktop": "", "tablet": "", "mobile": "" },
+          "horizontal": { "desktop": "", "tablet": "", "mobile": "" }
+        }
+      }
+    },
+    "weakPassword": {
+      "type": "object",
+      "default": {
+        "option": "default",
+        "validation": {
+          "length": 8,
+          "uppercase": true,
+          "lowercase": true,
+          "number": true,
+          "specialChar": true
+        }
+      }
+    },
+    "password":{
+      "type":"object",
+      "default":{
+        "container": {
+          "width": { "desktop": "", "tablet": "", "mobile": "" },
+          "height": { "desktop": "", "tablet": "", "mobile": "" },
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "border":{},
+          "bg":{"color":"#0000"}
+        },
+        "meter":{
+          "width": { "desktop": "", "tablet": "", "mobile": "" },
+          "height": { "desktop": "", "tablet": "", "mobile": "" },
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "border": {}
+        },
+        "passStrengthTxt": {
+            "veryWeak": "Very Weak",
+            "weak": "Weak Password",
+            "medium": "Medium Password",
+            "strong": "Strong Password",
+            "margin":{ "desktop": {}, "tablet": {}, "mobile": {} },
+            "padding":{ "desktop": {}, "tablet": {}, "mobile": {} },
+            "typography":{}
+        },
+        "colors":{
+          "veryWeak":"",
+          "weak":"",
+          "medium":"",
+          "strong":"",
+          "bg":{}
+        }
+      }
+    },
+    "button": {
+      "type": "object",
+      "default": {
+        "signup": {
+          "text": "Register",
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "typography": {},
+          "displayAs": { "desktop": "row", "tablet": "row", "mobile": "row" },
+          "justifyContent": {
+            "desktop": "space-between",
+            "tablet": "space-between",
+            "mobile": "space-between"
+          },
+          "alignment": {
+            "desktop": "left",
+            "tablet": "left",
+            "mobile": "left"
+          },
+          "color": {
+            "normal": { "color": "#fff", "bg": {"color":"#4527a4"} },
+            "hover":{ "color": "#fff", "bg": { "color": "#4527a4" } }
+          },
+          "border": { "normal": {}, "hover": {} },
+          "width": { "desktop": "", "tablet": "", "mobile": "" },
+          "height": { "desktop": "", "tablet": "", "mobile": "" },
+          "spinner": { "show": false, "position": 0, "color": "" }
+        },
+        "signin": {
+          "text": {
+            "first":"",
+            "second":"Sign In",
+            "link":""
+          },
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "typography": {},
+          "displayAs": { "desktop": "row", "tablet": "row", "mobile": "row" },
+          "justifyContent": {
+            "desktop": "start",
+            "tablet": "start",
+            "mobile": "start"
+          },
+          "alignItems": {
+            "desktop": "baseline",
+            "tablet": "baseline",
+            "mobile": "baseline"
+          },
+          "color": {
+            "normal": { "color": "", "bg": {} },
+            "hover": { "color": "", "bg": {} }
+          },
+          "border": { "normal": {}, "hover": {} },
+          "width": { "container":{ "desktop": "", "tablet": "", "mobile": "" }, "width":{ "desktop": "", "tablet": "", "mobile": "" } },
+          "height": { "desktop": "", "tablet": "", "mobile": "" }
+        }
+      }
+    },
+    "formOptions": {
+      "type": "object",
+      "default": {
+        "actions": ["Redirect"],
+        "customUrl": "",
+        "redirectPrevious": false,
+        "userRole": "default"
+      }
+    },
+    "emailOptions": {
+      "type": "object",
+      "default": {
+        "user": {
+          "type": "default",
+          "messageType": "HTML",
+          "mail": {
+            "subject": "Thank you for registering",
+            "message": ""
+          }
+        },
+        "admin": {
+          "type": "default",
+          "messageType": "HTML",
+          "mail": {
+            "subject": "New User Registration",
+            "message": ""
+          }
+        }
+      }
+    },
+    "termsConditions": {
+      "type": "object",
+      "default": {
+        "show": false,
+        "label": {
+          "first": "I Accept",
+          "second": "the Terms and Conditions."
+        },
+        "url": "",
+        "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+        "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+        "checkboxMargin": { "desktop": {}, "tablet": {}, "mobile": {} },
+        "color": { "text": "", "link": "", "bg": "", "checkbox": "" },
+        "typography": { "fontSize": 15 }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "default": {
+        "error": {
+          "email": {
+            "invalid": "You have used an invalid email",
+            "missing": "Email is missing",
+            "alreadyUsed": "Email is already registered with other account."
+          },
+          "username": {
+            "invalid": "You have used an invalid username",
+            "alreadyUsed": "The username already registered.",
+            "missing":"Username is missing"
+          },
+          "password": {
+            "invalid": "Your password is invalid",
+            "confirmedPass": "Your confirmed password did not match",
+            "missing":"Password is missing",
+            "custom":""
+          }
+        },
+        "success": "Registration completed successfully"
+      }
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "preview": true,
+      "columns": {
+        "desktop": 1,
+        "tablet": 1,
+        "mobile": 1
+      }
+    }
+  },
+  "editorScript": "file:./../dist/editor.js"
+}
