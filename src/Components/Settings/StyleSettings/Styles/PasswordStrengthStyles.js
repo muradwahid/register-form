@@ -1,69 +1,69 @@
-import { Flex, PanelBody,__experimentalUnitControl as UnitControl,__experimentalBoxControl as BoxControl } from '@wordpress/components';
+import { __experimentalBoxControl as BoxControl, Flex, PanelBody, __experimentalUnitControl as UnitControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import React,{useState,Fragment} from 'react';
-import Device from '../../../Panel/Device/Device';
+import React, { Fragment, useState } from 'react';
 import { Background, BorderControl, Label, Typography } from '../../../../../../Components';
 import { updateData } from '../../../../utils/functions';
-import { Tab } from '../../../Panel/Tab/Tab';
+import Device from '../../../Panel/Device/Device';
 import { PanelColorPicker } from '../../../Panel/PanelColorPicker/PanelColorPicker';
+import { Tab } from '../../../Panel/Tab/Tab';
 
 const PasswordStrengthStyles = ({ attributes, setAttributes }) => {
   const { password, formFields } = attributes;
   const [device, setDevice] = useState("desktop");
   const [tab, setTab] = useState("container");
   return (
-    <PanelBody title={__("Password Strength", "register-form")} initialOpen={false}>
-      <Tab value={tab} onChange={value => setTab(value)} options={["container","meter","text"]} />
+    <PanelBody title={__("Password Strength", "b-blocks")} initialOpen={false}>
+      <Tab value={tab} onChange={value => setTab(value)} options={["container", "meter", "text"]} />
       {
-        tab==="container" &&
-      <Fragment>
-        <div className='mb10'>
-          <strong>Container</strong>
-        </div>
+        tab === "container" &&
+        <Fragment>
+          <div className='mb10'>
+            <strong>Container</strong>
+          </div>
 
-        <div className="rgfr-panelDevice mt15">
-          <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-          <Flex
-            align="center"
-            justify="space-between"
-          >
-            <Label className='mb5'>{__("Width", "register-form")}</Label>
-            <UnitControl
-              className="rgfr-unitControl"
-              onChange={(value) => setAttributes({ password: updateData(password, "container", value, "width", device) })}
-              isUnitSelectTabbable
-              value={password.container.width[device]} />
-          </Flex>
-        </div>
-        <div className="rgfr-panelDevice mt15">
-          <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-          <Flex
-            align="center"
-            justify="space-between"
-          >
-            <Label className='mb5'>{__("Height", "register-form")}</Label>
-            <UnitControl
-              className="rgfr-unitControl"
-              onChange={(value) => setAttributes({ password: updateData(password, "container", value, "height", device) })}
-              isUnitSelectTabbable
-              value={password.container.height[device]} />
-          </Flex>
-        </div>
-        <div className="rgfr-panelDevice">
-          <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-          <BoxControl label={__("Margin", "register-form")} values={password.container.margin[device]} onChange={value => setAttributes({ password: updateData(password, "container", value, "margin", device) })} />
-        </div>
+          <div className="rgfr-panelDevice mt15">
+            <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
+            <Flex
+              align="center"
+              justify="space-between"
+            >
+              <Label className='mb5'>{__("Width", "b-blocks")}</Label>
+              <UnitControl
+                className="rgfr-unitControl"
+                onChange={(value) => setAttributes({ password: updateData(password, "container", value, "width", device) })}
+                isUnitSelectTabbable
+                value={password.container.width[device]} />
+            </Flex>
+          </div>
+          <div className="rgfr-panelDevice mt15">
+            <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
+            <Flex
+              align="center"
+              justify="space-between"
+            >
+              <Label className='mb5'>{__("Height", "b-blocks")}</Label>
+              <UnitControl
+                className="rgfr-unitControl"
+                onChange={(value) => setAttributes({ password: updateData(password, "container", value, "height", device) })}
+                isUnitSelectTabbable
+                value={password.container.height[device]} />
+            </Flex>
+          </div>
+          <div className="rgfr-panelDevice">
+            <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
+            <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={password.container.margin[device]} onChange={value => setAttributes({ password: updateData(password, "container", value, "margin", device) })} />
+          </div>
 
-        <div className="rgfr-panelDevice">
-          <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-          <BoxControl label={__("Padding", "register-form")} values={password.container.padding[device]} onChange={value => setAttributes({ password: updateData(password, "container", value, "padding", device) })} />
-        </div>
-        <Background label={__("Background", "register-form")} value={password.container.bg} onChange={value => setAttributes({ password: updateData(password, "container", value, "bg") })} />
-        <BorderControl label={__("Border", "register-form")} value={password.container.border} onChange={value => setAttributes({ password: updateData(password, "container", value, "border") })} />
-      </Fragment>
+          <div className="rgfr-panelDevice">
+            <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
+            <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={password.container.padding[device]} onChange={value => setAttributes({ password: updateData(password, "container", value, "padding", device) })} />
+          </div>
+          <Background label={__("Background", "b-blocks")} value={password.container.bg} onChange={value => setAttributes({ password: updateData(password, "container", value, "bg") })} />
+          <BorderControl label={__("Border", "b-blocks")} value={password.container.border} onChange={value => setAttributes({ password: updateData(password, "container", value, "border") })} />
+        </Fragment>
       }
       {
-        tab==="meter"&& 
+        tab === "meter" &&
         <Fragment>
           <div className='mb10 mt10'>
             <strong>Strength Meter</strong>
@@ -75,7 +75,7 @@ const PasswordStrengthStyles = ({ attributes, setAttributes }) => {
               align="center"
               justify="space-between"
             >
-              <Label className='mb5'>{__("Width", "register-form")}</Label>
+              <Label className='mb5'>{__("Width", "b-blocks")}</Label>
               <UnitControl
                 className="rgfr-unitControl"
                 onChange={(value) => setAttributes({ password: updateData(password, "meter", value, "width", device) })}
@@ -89,7 +89,7 @@ const PasswordStrengthStyles = ({ attributes, setAttributes }) => {
               align="center"
               justify="space-between"
             >
-              <Label className='mb5'>{__("Height", "register-form")}</Label>
+              <Label className='mb5'>{__("Height", "b-blocks")}</Label>
               <UnitControl
                 className="rgfr-unitControl"
                 onChange={(value) => setAttributes({ password: updateData(password, "meter", value, "height", device) })}
@@ -99,18 +99,18 @@ const PasswordStrengthStyles = ({ attributes, setAttributes }) => {
           </div>
           <div className="rgfr-panelDevice">
             <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-            <BoxControl label={__("Margin", "register-form")} values={password.meter.margin[device]} onChange={value => setAttributes({ password: updateData(password, "meter", value, "margin", device) })} />
+            <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={password.meter.margin[device]} onChange={value => setAttributes({ password: updateData(password, "meter", value, "margin", device) })} />
           </div>
 
           <div className="rgfr-panelDevice">
             <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-            <BoxControl label={__("Padding", "register-form")} values={password.meter.padding[device]} onChange={value => setAttributes({ password: updateData(password, "meter", value, "padding", device) })} />
+            <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={password.meter.padding[device]} onChange={value => setAttributes({ password: updateData(password, "meter", value, "padding", device) })} />
           </div>
-          <BorderControl label={__("Border", "register-form")} value={password.meter.border} onChange={value => setAttributes({ password: updateData(password, "meter", value, "border") })} />
+          <BorderControl label={__("Border", "b-blocks")} value={password.meter.border} onChange={value => setAttributes({ password: updateData(password, "meter", value, "border") })} />
         </Fragment>
       }
       {
-      tab==="text"&&
+        tab === "text" &&
         <Fragment>
           <div className='mb10 mt10'>
             <strong>Strength Text</strong>
@@ -118,32 +118,32 @@ const PasswordStrengthStyles = ({ attributes, setAttributes }) => {
 
           <div className="rgfr-panelDevice">
             <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-            <BoxControl label={__("Margin", "register-form")} values={password.passStrengthTxt.margin[device]} onChange={value => setAttributes({ password: updateData(password, "passStrengthTxt", value, "margin", device) })} />
+            <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={password.passStrengthTxt.margin[device]} onChange={value => setAttributes({ password: updateData(password, "passStrengthTxt", value, "margin", device) })} />
           </div>
 
           <div className="rgfr-panelDevice">
             <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-            <BoxControl label={__("Padding", "register-form")} values={password.passStrengthTxt.padding[device]} onChange={value => setAttributes({ password: updateData(password, "passStrengthTxt", value, "padding", device) })} />
-        </div>
-        <Typography label={__("Typography", "register-form")} value={password.passStrengthTxt.typography} onChange={value => setAttributes({ password: updateData(password, "passStrengthTxt", value,"typography")})} />
+            <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={password.passStrengthTxt.padding[device]} onChange={value => setAttributes({ password: updateData(password, "passStrengthTxt", value, "padding", device) })} />
+          </div>
+          <Typography label={__("Typography", "b-blocks")} value={password.passStrengthTxt.typography} onChange={value => setAttributes({ password: updateData(password, "passStrengthTxt", value, "typography") })} />
         </Fragment>
       }
-      
+
       {
         formFields.showPassStrengthText || formFields.showPassStrengthMeter ?
-        <Fragment>
+          <Fragment>
             <hr />
             <div className='mt10 mb10'>
               <strong>Colors</strong>
             </div>
-            <PanelColorPicker label={__("Very Weak Password", "register-form")} value={password.colors.veryWeak} onChange={value => setAttributes({ password: updateData(password, "colors", value, "veryWeak") })} />
-            
-            <PanelColorPicker label={__("Weak Password", "register-form")} value={password.colors.weak} onChange={value => setAttributes({ password: updateData(password, "colors", value, "weak") })} />
-            
-            <PanelColorPicker label={__("Medium Password", "register-form")} value={password.colors.medium} onChange={value => setAttributes({ password: updateData(password, "colors", value, "medium") })} />
-            
-            <PanelColorPicker label={__("Strong Password", "register-form")} value={password.colors.strong} onChange={value => setAttributes({password:updateData(password,"colors",value,"strong")})} />
-      </Fragment>:""
+            <PanelColorPicker label={__("Very Weak Password", "b-blocks")} value={password.colors.veryWeak} onChange={value => setAttributes({ password: updateData(password, "colors", value, "veryWeak") })} />
+
+            <PanelColorPicker label={__("Weak Password", "b-blocks")} value={password.colors.weak} onChange={value => setAttributes({ password: updateData(password, "colors", value, "weak") })} />
+
+            <PanelColorPicker label={__("Medium Password", "b-blocks")} value={password.colors.medium} onChange={value => setAttributes({ password: updateData(password, "colors", value, "medium") })} />
+
+            <PanelColorPicker label={__("Strong Password", "b-blocks")} value={password.colors.strong} onChange={value => setAttributes({ password: updateData(password, "colors", value, "strong") })} />
+          </Fragment> : ""
       }
 
 

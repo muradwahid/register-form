@@ -1,8 +1,9 @@
 import passValidation from "../hooks/usePassValidation";
 
-export const handleRegisterForm = (e, messages, setErrorMessage, formFields, weakPass) => {
+export const handleRegisterForm = (e, messages, setErrorMessage, formFields, weakPass, errorMessage, onSubmit) => {
   e.preventDefault();
-  const loading = true;
+  let loading = true;
+  let response = false;
 
   //error messages
   let errors = {
@@ -15,15 +16,26 @@ export const handleRegisterForm = (e, messages, setErrorMessage, formFields, wea
     // website: { type: "website", message: "" }
   }
 
+  const isRequired = {};
+
+
+  formFields.fields.map((field) => {
+    isRequired[field.type] = field.required;
+    if (field.required && !e.target[field.type].value) {
+      // setErrorMessage({ loading: false, errors: { [field.type]: `${field.label.text} is required` } });
+      errors[field.type] = messages.error[field.type]?.missing || `${field.label.text} is missing`;
+    }
+  });
+
   //input data
   const form = e.target;
   const username = form.username.value;
   const email = form.email.value;
   const password = form.password.value;
-  const confirmPass = form.confirmpassword?.value;
-  // const firstName = form.firstname?.value;
-  // const lastName = form.lastname?.value;
-  // const website = form.website?.value;
+  const confirmpassword = form.confirmpassword?.value;
+  const firstName = form.firstname?.value;
+  const lastName = form.lastname?.value;
+  const website = form.website?.value;
 
   //fields validation start 
 
@@ -31,9 +43,10 @@ export const handleRegisterForm = (e, messages, setErrorMessage, formFields, wea
   if (username) {
     if (!/^[a-zA-Z0-9_@+\\/]+$/.test(username)) {
       errors.username = messages.error.username.invalid
-    } else if (username === "murad442") {
-      errors.username = messages.error.username.alreadyUsed
     }
+    // else if (username === "murad442") {
+    //   errors.username = messages.error.username.alreadyUsed
+    // }
   } else if (!username) {
     errors.username = messages.error.username.missing
   } else {
@@ -43,11 +56,11 @@ export const handleRegisterForm = (e, messages, setErrorMessage, formFields, wea
   //email
   if (email) {
     if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-
       errors.email = messages.error.email.invalid
-    } else if (email === "muradwahid334@gmail.com") {
-      errors.email = messages.error.email.alreadyUsed
     }
+    // else if (email === "muradwahid334@gmail.com") {
+    //   errors.email = messages.error.email.alreadyUsed
+    // }
   } else if (!email.length) {
     errors.email = messages.error.email.missing
   } else {
@@ -69,20 +82,21 @@ export const handleRegisterForm = (e, messages, setErrorMessage, formFields, wea
       }
     }
   }
-  if (confirmPass !== password && typeof confirmPass != 'undefined' && !errors.password) {
+  if (confirmpassword !== password && typeof confirmpassword != 'undefined' && !errors.password) {
     errors.confirmpassword = messages.error.password.confirmedPass
   } else {
     delete errors.confirmpassword;
   }
   //fields validation start
 
-  console.log({ errors })
 
   // send error messages and loading status
   setErrorMessage({ loading, errors });
 
-  // if (!Object.keys(errors).length) {
-
-
-  // }
+  if (!Object.keys(errors).length) {
+    onSubmit({ username, email, password, confirmpassword, firstName, lastName, website, isRequired, fields: formFields.fields })
+  } else { 
+    setErrorMessage({ loading:false, errors });
+  }
+  return response;
 }

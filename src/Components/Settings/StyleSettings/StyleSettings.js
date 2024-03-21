@@ -8,6 +8,7 @@ import FieldIconStyles from './Styles/FieldIconStyles';
 import ButtonStyles from './Styles/ButtonStyles';
 import LoginLink from './Styles/LoginLink';
 import PasswordStrengthStyles from './Styles/PasswordStrengthStyles';
+import MessageStyles from './Styles/MessageStyles';
 
 const StyleSettings = ({attributes,setAttributes}) => {
   return (
@@ -23,6 +24,7 @@ const StyleSettings = ({attributes,setAttributes}) => {
       />
       <ButtonStyles attributes={attributes} setAttributes={setAttributes} />
       <LoginLink attributes={attributes} setAttributes={setAttributes} />
+      <MessageStyles attributes={attributes} setAttributes={setAttributes} />
       <PasswordStrengthStyles attributes={attributes} setAttributes={setAttributes} />
     </Fragment>
   );

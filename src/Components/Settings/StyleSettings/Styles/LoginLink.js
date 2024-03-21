@@ -20,15 +20,15 @@ const LoginLink = ({ attributes, setAttributes }) => {
   const [hover, setHover] = useState("normal");
 
   return (
-    <PanelBody title={__("Login Link", "register-form")} initialOpen={false}>
+    <PanelBody title={__("Login Link", "b-blocks")} initialOpen={false}>
       <div className="rgfr-panelDevice">
         <Device
           className="rgfr-device"
           value={device}
           onChange={(value) => setDevice(value)}
         />
-        <BoxControl
-          label={__("Margin", "register-form")}
+        <BoxControl className="boxControlWp"
+          label={__("Margin", "b-blocks")}
           values={button.signin.margin[device]}
           onChange={(value) =>
             setAttributes({
@@ -44,8 +44,8 @@ const LoginLink = ({ attributes, setAttributes }) => {
           value={device}
           onChange={(value) => setDevice(value)}
         />
-        <BoxControl
-          label={__("Padding", "register-form")}
+        <BoxControl className="boxControlWp"
+          label={__("Padding", "b-blocks")}
           values={button.signin.padding[device]}
           onChange={(value) =>
             setAttributes({
@@ -55,7 +55,7 @@ const LoginLink = ({ attributes, setAttributes }) => {
         />
       </div>
 
-      <Typography label={__("Typography", "register-form")} value={button.signin.typography} onChange={value => setAttributes({ button: updateData(button, "signin", value, "typography") })} />
+      <Typography label={__("Typography", "b-blocks")} value={button.signin.typography} onChange={value => setAttributes({ button: updateData(button, "signin", value, "typography") })} />
 
       <div className="rgfr-panelDevice mt15">
         <Device
@@ -65,7 +65,7 @@ const LoginLink = ({ attributes, setAttributes }) => {
           onChange={(value) => setDevice(value)}
         />
         <Flex align="center" justify="space-between">
-          <Label className="mb5">{__("Display as", "register-form")}</Label>
+          <Label className="mb5">{__("Display as", "b-blocks")}</Label>
           <SelectControl
             labelPosition="left"
             options={[
@@ -103,7 +103,7 @@ const LoginLink = ({ attributes, setAttributes }) => {
           />
           <Flex align="center" justify="space-between">
             <Label className="mb10">
-              {__("Justify Content", "register-form")}
+              {__("Justify Content", "b-blocks")}
             </Label>
             <SelectControl
               labelPosition="left"
@@ -137,7 +137,7 @@ const LoginLink = ({ attributes, setAttributes }) => {
 
           <Flex align="center" justify="space-between">
             <Label className="mb10">
-              {__("Align Items", "register-form")}
+              {__("Align Items", "b-blocks")}
             </Label>
             <SelectControl
               options={alignItems}
@@ -160,35 +160,35 @@ const LoginLink = ({ attributes, setAttributes }) => {
       }
 
       <Flex className="rgfr-panelDevice" align="center" justify="space-between">
-        <Label className="mb10">{__("Link Container Width", "register-form")}</Label>
+        <Label className="mb10">{__("Link Container Width", "b-blocks")}</Label>
         <UnitControl
           className="rgfr-unitControl"
           value={button.signin.width.container[device]}
           min={0}
           onChange={(value) =>
             setAttributes({
-              button: updateData(button, "signin", value, "width","container",device),
+              button: updateData(button, "signin", value, "width", "container", device),
             })
           }
         />
       </Flex>
 
       <Flex className="rgfr-panelDevice" align="center" justify="space-between">
-        <Label className="mb10">{__("Link Width", "register-form")}</Label>
+        <Label className="mb10">{__("Link Width", "b-blocks")}</Label>
         <UnitControl
           className="rgfr-unitControl"
           value={button.signin.width.width[device]}
           min={0}
           onChange={(value) =>
             setAttributes({
-              button: updateData(button, "signin", value, "width","width", device),
+              button: updateData(button, "signin", value, "width", "width", device),
             })
           }
         />
       </Flex>
 
       <Flex className="rgfr-panelDevice" align="center" justify="space-between">
-        <Label className="mb10">{__("Link Height", "register-form")} </Label>
+        <Label className="mb10">{__("Link Height", "b-blocks")} </Label>
         <UnitControl
           className="rgfr-unitControl"
           min={0}
@@ -208,7 +208,7 @@ const LoginLink = ({ attributes, setAttributes }) => {
       />
 
       <PanelColorPicker
-        label={__("Color", "register-form")}
+        label={__("Color", "b-blocks")}
         value={button.signin.color[hover].color}
         onChange={(value) =>
           setAttributes({
@@ -224,7 +224,7 @@ const LoginLink = ({ attributes, setAttributes }) => {
         }
       />
       <Background
-        label={__("Background", "register-form")}
+        label={__("Background", "b-blocks")}
         value={button.signin.color[hover].bg}
         onChange={(value) =>
           setAttributes({
@@ -233,7 +233,7 @@ const LoginLink = ({ attributes, setAttributes }) => {
         }
       />
       <BorderControl
-        label={__("Border", "register-form")}
+        label={__("Border", "b-blocks")}
         value={button.signin.border[hover]}
         onChange={(value) =>
           setAttributes({

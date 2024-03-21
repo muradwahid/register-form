@@ -1,10 +1,10 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import SVG from "react-inlinesvg";
 import { LoginSocialFacebook, LoginSocialGoogle } from "reactjs-social-login";
 import emailIcon from "../../../assets/icon/envelope-solid.svg";
 import passIcon from "../../../assets/icon/lock-solid.svg";
 import userIcon from "../../../assets/icon/user-solid.svg";
-import { inputType } from "../../utils/functions";
+import { generateUserName, inputType } from "../../utils/functions";
 import { FaFacebook, FcGoogle, ImEye, ImEyeBlocked } from "../../utils/icons";
 import PasswordStrength from "../PasswordStrength/PasswordStrength";
 import PasswordStrengthText from "../PasswordStrength/PasswordStrengthText";
@@ -12,12 +12,13 @@ import Style from "../Style/Style";
 import FormImg from "./FormImage";
 import { handleRegisterForm } from "./validateRegisterForm";
 
-const RegisterForm = ({ attributes, nonce }) => {
-  const { formHeader, formFields, button, termsConditions, validation, socialSignUp, weakPassword } = attributes;
+const RegisterForm = ({ attributes, nonce, isBackend }) => {
+  const { formHeader, formFields, button, termsConditions, validation, socialSignUp, weakPassword, emailOptions, formOptions } = attributes;
   const [showPass, setShowPass] = useState(true);
   const [errorMessage, setErrorMessage] = useState({});
+  const formRef = useRef();
   const [pass, setPass] = useState("");
-
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const handleIcon = (type) => {
     if (type === "username") {
       return userIcon;
@@ -32,7 +33,61 @@ const RegisterForm = ({ attributes, nonce }) => {
     }
   };
 
-  console.log(errorMessage?.errors)
+
+  const onSubmit = async (data) => {
+
+    const { isRequired, fields, ...others } = data;
+    let userEmail = {};
+    let adminEmail = {};
+
+    if (emailOptions.user.type === "custom") {
+      userEmail = {
+        subject: emailOptions.user.mail.subject,
+        message: processEmailTemplate(emailOptions.user.mail.message, others),
+        allowHTML: emailOptions.user.messageType === "HTML" ? true : false,
+      }
+    }
+
+    if (emailOptions.admin.type === "custom") {
+      adminEmail = {
+        subject: emailOptions.admin.mail.subject,
+        message: processEmailTemplate(emailOptions.admin.mail.message, others),
+        allowHTML: emailOptions.admin.messageType === "HTML" ? true : false,
+      }
+    }
+    wp.ajax.post('rgfr_registration', { ...data, adminEmail, userEmail, nonce, role: formOptions.userRole }).done(res => {
+      setShowSuccessMessage(true)
+      if (formOptions.isRedirect) {
+        if (formOptions.redirectPrevious) {
+          window.navigation.back();
+        } else {
+          window.location.href = formOptions.customUrl;
+        }
+      }
+
+      formRef.current.reset();
+      setErrorMessage({ loading: false });
+    }).fail(error => {
+      const errors = {};
+      if (error.existing_user_email) {
+        errors.email = validation.error.email.alreadyUsed
+      }
+      else if (error.existing_user_login) {
+        errors.username = validation.error.username.alreadyUsed
+      }
+      setErrorMessage({ errors, loading: false })
+    });
+
+
+
+  }
+
+
+  const processEmailTemplate = (template, data) => {
+    const { username, email, firstName, lastName, website, password } = data
+    return template.replace('[username]', username).replace('[username]', email).replace('[password]', password).replace('[firstname]', firstName).replace('[lastname]', lastName).replace('[website]', website);
+  }
+
 
   return (
     <Fragment>
@@ -41,7 +96,7 @@ const RegisterForm = ({ attributes, nonce }) => {
         <div className="rgfr-register-form">
           <FormImg attributes={attributes} />
           <div className="rgfr-registerForm-container">
-            <form onSubmit={(e) => handleRegisterForm(e, validation, setErrorMessage, formFields, weakPassword, nonce)} className="rgfr-register-form-wrapper">
+            <form ref={formRef} onSubmit={(e) => handleRegisterForm(e, validation, setErrorMessage, formFields, weakPassword, errorMessage, onSubmit, nonce)} className="rgfr-register-form-wrapper">
               <div className="rgfr-register-logo-wrapper">
                 {formHeader.header.logo.url.url && (
                   <div className="rgrf-register-logo">
@@ -147,9 +202,11 @@ const RegisterForm = ({ attributes, nonce }) => {
                     className="rgfr-signupBtn"
                     type="submit"
                     value={button.signup.text}
+
+                    disabled={isBackend || errorMessage.loading}
                   />
                   {
-                    button.signup.spinner.show &&
+                    button.signup.spinner.show && (isBackend || errorMessage.loading) &&
                     <span className="rgfr-loader"></span>
                   }
                 </div>
@@ -182,13 +239,14 @@ const RegisterForm = ({ attributes, nonce }) => {
               socialSignUp.google.show || socialSignUp.facebook.show ?
                 <div className="rgfr-social-signUpBtn">
                   {
-                    socialSignUp.google.show && !socialSignUp.google.clientId ? <div className="rgfr-socialSignup-warning">
-                      <span>Client Id required for google signup</span>
-                    </div> :
+                    socialSignUp.google.show ? socialSignUp.google.clientId ?
                       <LoginSocialGoogle
                         client_id={socialSignUp.google.clientId}
-                        onResolve={(response) => console.log(response)}
-                        onReject={(error) => console.log(error)}
+                        onResolve={(response) => onSubmit({
+                          email: response.data.email, firstName: response.data.given_name, lastName: response.data.family_name, username: generateUserName(response.data.email)
+                        })}
+                        
+                        onReject={(error) => console.error(error)}
                         scope="profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
                       >
                         <div className="rgfr-googleSignUp">
@@ -197,16 +255,19 @@ const RegisterForm = ({ attributes, nonce }) => {
                             <span>{socialSignUp.google.text}</span>
                           </div>
                         </div>
-                      </LoginSocialGoogle>
+                      </LoginSocialGoogle> : <div className="rgfr-socialSignup-warning">
+                        <span>Client ID required for google signup</span>
+                      </div> : null
                   }
                   {
-                    socialSignUp.facebook.show && !socialSignUp.facebook.clientId ? <div className="rgfr-socialSignup-warning">
-                      <span>API key required for facebook signup</span>
-                    </div> :
+                    socialSignUp.facebook.show ? socialSignUp.facebook.clientId ?
                       <LoginSocialFacebook
                         appId={socialSignUp.facebook.clientId}
-                        onResolve={(response) => console.log(response)}
-                        onReject={(error) => console.log(error)}
+                        onResolve={(response) => onSubmit({
+                          firstName: response.data.first_name, lastName: response.data.last_name, username: `facebook_${response.data.userID}`, email: `${response.data.userID}@facebook.com`
+                        })}
+                        
+                        onReject={(error) => console.error(error)}
                       >
                         <div className="rgfr-facebookSignUp">
                           <div className="rgfr-facebookBtn">
@@ -214,9 +275,17 @@ const RegisterForm = ({ attributes, nonce }) => {
                             <span>{socialSignUp.facebook.text}</span>
                           </div>
                         </div>
-                      </LoginSocialFacebook>
+                      </LoginSocialFacebook> : <div className="rgfr-socialSignup-warning">
+                        <span>API key required for facebook signup</span>
+                      </div> : null
                   }
-                </div> : ""
+                </div> : null
+            }
+            {
+              validation.success.styles.isShow && (isBackend || showSuccessMessage) &&
+              <div className="rgfr-successMessage">
+                <span>{validation.success.text}</span>
+              </div>
             }
           </div>
 

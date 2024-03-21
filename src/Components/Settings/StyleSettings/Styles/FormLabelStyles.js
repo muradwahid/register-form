@@ -13,15 +13,15 @@ const FormLabelStyles = ({ attributes, setAttributes }) => {
   const { formLabel } = attributes;
   const [device, setDevice] = useState("desktop");
   return (
-    <PanelBody title={__("Form Labels", "register-form")} initialOpen={false}>
+    <PanelBody title={__("Form Labels", "b-blocks")} initialOpen={false}>
       <div className="rgfr-panelDevice">
         <Device
           className="rgfr-device"
           value={device}
           onChange={(value) => setDevice(value)}
         />
-        <BoxControl
-          label={__("Margin", "register-form")}
+        <BoxControl className="boxControlWp"
+          label={__("Margin", "b-blocks")}
           values={formLabel.margin[device]}
           onChange={(value) =>
             setAttributes({
@@ -37,8 +37,8 @@ const FormLabelStyles = ({ attributes, setAttributes }) => {
           value={device}
           onChange={(value) => setDevice(value)}
         />
-        <BoxControl
-          label={__("Padding", "register-form")}
+        <BoxControl className="boxControlWp"
+          label={__("Padding", "b-blocks")}
           values={formLabel.padding[device]}
           onChange={(value) =>
             setAttributes({
@@ -49,7 +49,7 @@ const FormLabelStyles = ({ attributes, setAttributes }) => {
       </div>
 
       <Typography
-        label={__("Typography", "register-form")}
+        label={__("Typography", "b-blocks")}
         value={formLabel.typography}
         onChange={(value) =>
           setAttributes({
@@ -58,7 +58,7 @@ const FormLabelStyles = ({ attributes, setAttributes }) => {
         }
       />
       <PanelColorPicker
-        label={__("Color", "register-form")}
+        label={__("Color", "b-blocks")}
         value={formLabel.color.text}
         onChange={(value) =>
           setAttributes({
@@ -67,7 +67,7 @@ const FormLabelStyles = ({ attributes, setAttributes }) => {
         }
       />
       <PanelColorPicker
-        label={__("Background", "register-form")}
+        label={__("Background", "b-blocks")}
         value={formLabel.color.bg}
         onChange={(value) =>
           setAttributes({
@@ -76,7 +76,7 @@ const FormLabelStyles = ({ attributes, setAttributes }) => {
         }
       />
       <BorderControl
-        label={__("Border", "register-form")}
+        label={__("Border", "b-blocks")}
         value={formLabel.border}
         onChange={(value) =>
           setAttributes({ formLabel: updateData(formLabel, "border", value) })

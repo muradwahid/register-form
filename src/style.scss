@@ -4,15 +4,12 @@ $primaryColor: #4527a4;
 html {
   scroll-behavior: smooth;
 }
-
 // Dashicon
 .dashicons {
   font-family: dashicons !important;
 }
-
 // Block Name
-.wp-block-rgfr-register-form,
-.wp-block-rgfr-hello {
+.wp-block-b-blocks-register-form {
   * {
     box-sizing: border-box;
   }
@@ -314,6 +311,12 @@ html {
               }
             }
           }
+        }
+        .rgfr-successMessage {
+          margin:10px;
+          border-left: 2px solid blue;
+          padding: 0 5px;
+          font-size: 14px;
         }
       }
       .rgfr-register-image-wrapper {

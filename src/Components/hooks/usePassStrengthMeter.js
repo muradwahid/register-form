@@ -41,7 +41,6 @@ export const usePassStrengthMeter = (pass) => {
     const lengthMeterEl = document.getElementsByClassName("rgfr-strengthMeter");
     if (lengthMeterEl.length ) {
       Array.from(lengthMeterEl).forEach((e, i) => {
-        // console.log(e);
         if (passLength === 0) {
           e.classList.remove("veryWeak");
         } else if (passLength === 1) {

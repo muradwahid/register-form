@@ -66,3 +66,11 @@ export const btnAlign = (value) => {
     return "center";
   }
 }
+
+export const location = window.location.origin + window.location.pathname+"/";
+
+export const generateUserName = (email) => { 
+  const usernameRegex = /^[^/@_.]+/;
+  const usernameMatch = email.match(usernameRegex)[0];
+  return usernameMatch
+}

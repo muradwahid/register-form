@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./panelRepeater.scss"
+import "./panelRepeater.scss";
 
 /**
  * PanelRepeater component.

@@ -14,7 +14,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
   const { fieldIcons } = attributes;
   const [device, setDevice] = useState("desktop");
   return (
-    <PanelBody title={__("Form Icons", "register-form")} initialOpen={false}>
+    <PanelBody title={__("Form Icons", "b-blocks")} initialOpen={false}>
       <div className="mt10">
         <strong>Form Fields Icon</strong>
       </div>
@@ -27,7 +27,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Flex>
-            <Label className="mb5">{__("Icon Size", "register-form")}</Label>
+            <Label className="mb5">{__("Icon Size", "b-blocks")}</Label>
           </Flex>
           <UnitControl
             className="rgfr-unitControl"
@@ -48,7 +48,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
       </div>
 
       <PanelColorPicker
-        label={__("Open Eye Color", "register-form")}
+        label={__("Open Eye Color", "b-blocks")}
         value={fieldIcons.icon.color}
         onChange={(value) =>
           setAttributes({
@@ -71,7 +71,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Vertical Alignment", "register-form")}
+            {__("Vertical Alignment", "b-blocks")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"
@@ -102,7 +102,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Horizontal Alignment", "register-form")}
+            {__("Horizontal Alignment", "b-blocks")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"
@@ -137,7 +137,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Flex>
-            <Label className="mb5">{__("Icon Size", "register-form")}</Label>
+            <Label className="mb5">{__("Icon Size", "b-blocks")}</Label>
           </Flex>
           <UnitControl
             className="rgfr-unitControl"
@@ -157,7 +157,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         </Flex>
       </div>
       <PanelColorPicker
-        label={__("Open Eye Color", "register-form")}
+        label={__("Open Eye Color", "b-blocks")}
         value={fieldIcons.passVisibility.openColor}
         onChange={(value) =>
           setAttributes({
@@ -172,7 +172,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
       />
 
       <PanelColorPicker
-        label={__("Close Eye Color", "register-form")}
+        label={__("Close Eye Color", "b-blocks")}
         value={fieldIcons.passVisibility.closeColor}
         onChange={(value) =>
           setAttributes({
@@ -195,7 +195,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Vertical Alignment", "register-form")}
+            {__("Vertical Alignment", "b-blocks")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"
@@ -226,7 +226,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Horizontal Alignment", "register-form")}
+            {__("Horizontal Alignment", "b-blocks")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"

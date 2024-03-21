@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import {
   getBackgroundCSS,
   getBorderCSS,
@@ -18,7 +18,8 @@ const Style = ({ attributes }) => {
     formLabel,
     fieldIcons,
     button,
-    password
+    password,
+    validation
   } = attributes;
   const mainWrapper = `#rgfrRegisterBlock-${cId} .rgfr-register-form-main-wrapper`;
   const formWrapper = `${mainWrapper} .rgfr-register-form`;
@@ -36,16 +37,19 @@ const Style = ({ attributes }) => {
   const buttonWrapper = `${formEl} .rgfr-registerFormBtn-wrapper`;
   const signUpButton = `${buttonWrapper} .rgfr-register-loader-wrapper`;
   const signinButton = `${buttonWrapper} .rgfr-signInBtn-wrapper`;
+  const successMessageEl = `${formContainer} .rgfr-successMessage`;
   return (
     <Fragment>
       <style>{`
     ${getTypoCSS("", formHeader.header.title.typography)?.googleFontLink}
     ${getTypoCSS("", formHeader.header.subTitle.typography)?.googleFontLink}
-    ${getTypoCSS("", formFields.input.typography).styles}
-    ${getTypoCSS("", formLabel.typography).styles}
-    ${getTypoCSS("", termsConditions.typography).styles}
-    ${getTypoCSS("", button.signup.typography).styles}
-    ${getTypoCSS("", button.signin.typography).styles}
+    ${getTypoCSS("", formFields.input.typography)?.googleFontLink}
+    ${getTypoCSS("", formLabel.typography)?.googleFontLink}
+    ${getTypoCSS("", termsConditions.typography)?.googleFontLink}
+    ${getTypoCSS("", button.signup.typography)?.googleFontLink}
+    ${getTypoCSS("", button.signin.typography)?.googleFontLink}
+    ${getTypoCSS("", validation.success.styles.typo)?.googleFontLink}
+    ${getTypoCSS("", validation.error.styles.typo)?.googleFontLink}
     #rgfrRegisterBlock-${cId}{
       margin:${getBoxCss(general.containerBox.margin.desktop)};
       justify-content:${general.containerBox.alignment.desktop};
@@ -59,7 +63,7 @@ const Style = ({ attributes }) => {
     ${formWrapper}{
       width:${general.containerBox.width.desktop};
       ${formHeader.image.desktop.url
-        ? `flex-direction:${logoPosition(formHeader.image.position.desktop)};`
+          ? `flex-direction:${logoPosition(formHeader.image.position.desktop)};`
           : ""
         }
       justify-content:${formHeader.image.desktop.url ? "normal" : "center"};
@@ -185,6 +189,14 @@ const Style = ({ attributes }) => {
       text-align:${formFields.input.txtAlign};
       ${getBorderCSS(formFields.input.border.normal)}
     }
+
+    ${getTypoCSS(`${inputField} .rgfr-input-errorMessage`, validation.error.styles.typo).styles}
+
+    ${inputField} .rgfr-input-errorMessage{
+      margin:${getBoxCss(validation.error.styles.margin)};
+      color:${validation.error.styles.color};
+    }
+
     ${inputField} .rgfr-inputField input::placeholder{
       color:${formFields.input.color.normal.placeholder};
     }
@@ -232,12 +244,12 @@ const Style = ({ attributes }) => {
       padding:${getBoxCss(password.meter.padding.desktop)};
       ${getBorderCSS(password.meter.border)}
     }
-    ${Object.keys(password.colors).map((value, i) => {
+    ${Object.keys(password.colors).map((value) => {
           return `  ${inputField} .passLength .${value}{
         background:${password.colors[value]};
     }`
         }).join("")}
-    ${Object.keys(password.colors).map((value, i) => {
+    ${Object.keys(password.colors).map((value) => {
           return `  ${inputField} .${value}-text{
         color:${password.colors[value]};
     }`
@@ -315,6 +327,16 @@ ${getTypoCSS(`${inputField} .rgfr-passStrengthTextWrapper span`, password.passSt
       color:${button.signin.color.hover.color};
       ${getBackgroundCSS(button.signin.color.hover.bg)}
       ${getBorderCSS(button.signin.border.hover)}
+    }
+    ${successMessageEl} {
+      margin:${getBoxCss(validation.success.styles.margin)};
+      padding:${getBoxCss(validation.success.styles.padding)};
+      ${getBorderCSS(validation.success.styles.border)}
+      ${getBackgroundCSS(validation.success.styles.color.bg)}
+    }
+    ${getTypoCSS(`${successMessageEl} span`, validation.success.styles.typo).styles}
+    ${successMessageEl} span{
+      color:${validation.success.styles.color.text};
     }
     `}</style>
       <ResponsiveStyle attributes={attributes} />

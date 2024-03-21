@@ -13,14 +13,34 @@ Description of the Register Form
 
 == Description ==
 
-Large Description
+- Register Form Block Plugin is the ultimate solution for creating beautiful and functional user registration forms in WordPress. With its block-based interface, customizable features, and robust security measures, you can easily enhance the user registration experience on your website.
 
 
-**[Demos](https://bblockswp.com/demo/block-name)**
+**[Demos](https://bblockswp.com/demo/register-form)**
 
 
 = Features =
-- **Fully Customizable**: All the options you need to arrange the showcase to your liking are available here.
+
+- **Customizable Fields**: You can select which fields to include in the form, such as username, email, password, first name, last name, and website.
+
+- **Field Validation**: The block automatically validates fields to ensure that required information is provided and that passwords meet certain criteria.
+
+- **Customizable Form Text**: You can customize the text displayed on the form, including the form title, field labels, and error messages.
+
+- **Redirect URL**: You can specify a URL to redirect users to after they successfully register.
+
+- **Translation Ready**: The block is translation-ready, allowing you to display the form in multiple languages.
+
+- **Responsive Design**: The form is designed to be responsive and adapt to different screen sizes.
+
+- **Gutenberg Integration**: The block seamlessly integrates with the Gutenberg editor, making it easy to add the form to your page or post.
+
+- **AJAX Submission**: The form submits data via AJAX, providing a smooth and user-friendly experience.
+
+- **Enhanced security**: The built-in validation and spam protection features help to ensure the security of your registration process.
+
+- **Customization options**: The customizable fields and messages allow you to tailor the form to meet your specific needs.
+
 
 
 = How to use =

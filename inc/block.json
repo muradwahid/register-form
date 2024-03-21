@@ -1,11 +1,11 @@
 {
   "apiVersion": "1",
-  "name": "rgfr/register-form",
+  "name": "b-blocks/register-form",
   "title": "Register Form",
-  "description": "Description of Register Form.",
+  "description": "Register more users and improve engagement in WordPress.",
   "category": "widgets",
-  "keywords": ["hello", "block", "gutenberg"],
-  "textdomain": "register-form",
+  "keywords": ["register", "form", "register form"],
+  "textdomain": "b-blocks",
   "attributes": {
     "align": {
       "type": "string",
@@ -22,7 +22,11 @@
           "width": { "desktop": "620px", "tablet": "620px", "mobile": "100%" },
           "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
           "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
-          "alignment":{ "desktop": "center", "tablet": "center", "mobile": "center" },
+          "alignment": {
+            "desktop": "center",
+            "tablet": "center",
+            "mobile": "center"
+          },
           "border": {},
           "bg": { "color": "#0000" },
           "shadow": []
@@ -103,7 +107,7 @@
           "mobile": {},
           "url": "",
           "resolution": "full",
-          "position":{"desktop":"left","tablet":"left","mobile":"top"},
+          "position": { "desktop": "left", "tablet": "left", "mobile": "top" },
           "height": { "desktop": "100%", "tablet": "100%", "mobile": "100%" },
           "width": { "desktop": "250px", "tablet": "250px", "mobile": "250px" },
           "margin": { "desktop": "", "tablet": "", "mobile": "" },
@@ -180,7 +184,7 @@
               "text": "",
               "placeholder": "",
               "bg": "",
-              "border": { "width": "1px", "color": "#ccc","radius":"3px" }
+              "border": { "width": "1px", "color": "#ccc", "radius": "3px" }
             },
             "focus": {
               "placeholder": "",
@@ -188,7 +192,10 @@
               "border": { "width": "1px", "color": "#ccc", "radius": "3px" }
             }
           },
-          "border": { "normal": { "width": "1px", "color": "#ccc", "radius": "3px" }, "focus": { "width": "1px", "color": "#ccc", "radius": "3px" } },
+          "border": {
+            "normal": { "width": "1px", "color": "#ccc", "radius": "3px" },
+            "focus": { "width": "1px", "color": "#ccc", "radius": "3px" }
+          },
           "typography": {}
         },
         "showLabel": true,
@@ -242,18 +249,18 @@
         }
       }
     },
-    "password":{
-      "type":"object",
-      "default":{
+    "password": {
+      "type": "object",
+      "default": {
         "container": {
           "width": { "desktop": "", "tablet": "", "mobile": "" },
           "height": { "desktop": "", "tablet": "", "mobile": "" },
           "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
           "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
-          "border":{},
-          "bg":{"color":"#0000"}
+          "border": {},
+          "bg": { "color": "#0000" }
         },
-        "meter":{
+        "meter": {
           "width": { "desktop": "", "tablet": "", "mobile": "" },
           "height": { "desktop": "", "tablet": "", "mobile": "" },
           "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
@@ -261,20 +268,20 @@
           "border": {}
         },
         "passStrengthTxt": {
-            "veryWeak": "Very Weak",
-            "weak": "Weak Password",
-            "medium": "Medium Password",
-            "strong": "Strong Password",
-            "margin":{ "desktop": {}, "tablet": {}, "mobile": {} },
-            "padding":{ "desktop": {}, "tablet": {}, "mobile": {} },
-            "typography":{}
+          "veryWeak": "Very Weak",
+          "weak": "Weak Password",
+          "medium": "Medium Password",
+          "strong": "Strong Password",
+          "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
+          "typography": {}
         },
-        "colors":{
-          "veryWeak":"",
-          "weak":"",
-          "medium":"",
-          "strong":"",
-          "bg":{}
+        "colors": {
+          "veryWeak": "",
+          "weak": "",
+          "medium": "",
+          "strong": "",
+          "bg": {}
         }
       }
     },
@@ -298,8 +305,8 @@
             "mobile": "left"
           },
           "color": {
-            "normal": { "color": "#fff", "bg": {"color":"#4527a4"} },
-            "hover":{ "color": "#fff", "bg": { "color": "#4527a4" } }
+            "normal": { "color": "#fff", "bg": { "color": "#4527a4" } },
+            "hover": { "color": "#fff", "bg": { "color": "#4527a4" } }
           },
           "border": { "normal": {}, "hover": {} },
           "width": { "desktop": "", "tablet": "", "mobile": "" },
@@ -308,9 +315,9 @@
         },
         "signin": {
           "text": {
-            "first":"",
-            "second":"Sign In",
-            "link":""
+            "first": "",
+            "second": "Sign In",
+            "link": "http://localhost/login"
           },
           "margin": { "desktop": {}, "tablet": {}, "mobile": {} },
           "padding": { "desktop": {}, "tablet": {}, "mobile": {} },
@@ -331,7 +338,10 @@
             "hover": { "color": "", "bg": {} }
           },
           "border": { "normal": {}, "hover": {} },
-          "width": { "container":{ "desktop": "", "tablet": "", "mobile": "" }, "width":{ "desktop": "", "tablet": "", "mobile": "" } },
+          "width": {
+            "container": { "desktop": "", "tablet": "", "mobile": "" },
+            "width": { "desktop": "", "tablet": "", "mobile": "" }
+          },
           "height": { "desktop": "", "tablet": "", "mobile": "" }
         }
       }
@@ -339,10 +349,10 @@
     "formOptions": {
       "type": "object",
       "default": {
-        "actions": ["Redirect"],
-        "customUrl": "",
+        "isRedirect":true,
+        "customUrl": "http://localhost/login",
         "redirectPrevious": false,
-        "userRole": "default"
+        "userRole": "subscriber"
       }
     },
     "emailOptions": {
@@ -353,7 +363,7 @@
           "messageType": "HTML",
           "mail": {
             "subject": "Thank you for registering",
-            "message": ""
+            "message": "<p>Thank you for registering on gutenberg plugin development!</p> \n <p>Username: [username]</p> \n <p>Password: [password]</p> \n<p>Please click the following address to login to your account:</p> \n<p>http://localhost/my-site/wp-admin/post.php/ </p>"
           }
         },
         "admin": {
@@ -361,7 +371,7 @@
           "messageType": "HTML",
           "mail": {
             "subject": "New User Registration",
-            "message": ""
+            "message": "<p>New user registration on your site gutenberg plugin development</p>\n<p>Username: [username]</p>\n<p>Email: [email]</p>"
           }
         }
       }
@@ -394,16 +404,31 @@
           "username": {
             "invalid": "You have used an invalid username",
             "alreadyUsed": "The username already registered.",
-            "missing":"Username is missing"
+            "missing": "Username is missing"
           },
           "password": {
             "invalid": "Your password is invalid",
             "confirmedPass": "Your confirmed password did not match",
-            "missing":"Password is missing",
-            "custom":""
+            "missing": "Password is missing",
+            "custom": ""
+          },
+          "styles":{
+            "typo":{ "fontSize": { "desktop": 11, "tablet": 11, "mobile": 11 } },
+            "color":"",
+            "margin":{}
           }
         },
-        "success": "Registration completed successfully"
+        "success": {
+          "text":"Registration completed successfully",
+          "styles":{
+            "isShow":false,
+            "typo":{ "fontSize": { "desktop": 14, "tablet": 14, "mobile": 14 } },
+            "color":{"text":"","bg":{}},
+            "margin":{},
+            "padding":{},
+            "border":{"side":"left","color":"#00F","width":"2px"}
+          }
+        }
       }
     }
   },

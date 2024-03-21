@@ -67,3 +67,12 @@ $primaryColor: #4527a4;
     color: #874747;
   }
 }
+
+.boxControlWp{
+  .components-base-control{
+    margin-bottom: 0;
+  }
+  .components-base-control:last-child{
+    margin-bottom: 0;
+  }
+}
