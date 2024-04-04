@@ -14,23 +14,23 @@ const FieldStyles = ({ attributes, setAttributes }) => {
   const [device, setDevice] = useState("desktop");
   const [focus, setFocus] = useState("normal");
   return (
-    <PanelBody title={__("Form Fields", "b-blocks")} initialOpen={false}>
+    <PanelBody title={__("Form Fields", "register-form")} initialOpen={false}>
       <div className="rgfr-panelDevice">
         <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-        <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={formFields.input.margin[device]} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "margin", device) })} />
+        <BoxControl className="boxControlWp" label={__("Margin", "register-form")} values={formFields.input.margin[device]} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "margin", device) })} />
       </div>
 
       <div className="rgfr-panelDevice">
         <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
 
-        <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={formFields.input.padding[device]} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "padding", device) })} />
+        <BoxControl className="boxControlWp" label={__("Padding", "register-form")} values={formFields.input.padding[device]} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "padding", device) })} />
       </div>
 
-      <Typography label={__("Typography", "b-blocks")} value={formFields.input.typography} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "typography") })} />
+      <Typography label={__("Typography", "register-form")} value={formFields.input.typography} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "typography") })} />
 
       <PanelAlign
         className='mb10 mt10'
-        label={__("Text Alignment", "b-blocks")}
+        label={__("Text Alignment", "register-form")}
         value={formFields.input.txtAlign}
         icons={[{ label: "left", value: alignLeft }, { label: "center", value: alignCenter }, { label: "right", value: alignRight }]} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "txtAlign") })}
       />
@@ -38,14 +38,14 @@ const FieldStyles = ({ attributes, setAttributes }) => {
       <Tab options={["normal", "focus"]} value={focus} onChange={value => setFocus(value)} />
 
       {
-        focus === "normal" && <PanelColorPicker label={__("Color", "b-blocks")} value={formFields.input.color.normal.text} onChange={(value) => setAttributes({ formFields: updateData(formFields, "input", value, "color", "normal", "text") })} />
+        focus === "normal" && <PanelColorPicker label={__("Color", "register-form")} value={formFields.input.color.normal.text} onChange={(value) => setAttributes({ formFields: updateData(formFields, "input", value, "color", "normal", "text") })} />
       }
 
-      <PanelColorPicker label={__("Placeholder Color", "b-blocks")} value={formFields.input.color[focus].placeholder} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "color", focus, "placeholder") })} />
+      <PanelColorPicker label={__("Placeholder Color", "register-form")} value={formFields.input.color[focus].placeholder} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "color", focus, "placeholder") })} />
 
-      <PanelColorPicker label={__("Background", "b-blocks")} value={formFields.input.color[focus].bg} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "color", focus, "bg") })} />
+      <PanelColorPicker label={__("Background", "register-form")} value={formFields.input.color[focus].bg} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "color", focus, "bg") })} />
 
-      <BorderControl label={__("Border", "b-blocks")} value={formFields.input.border[focus]} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "border", focus) })} />
+      <BorderControl label={__("Border", "register-form")} value={formFields.input.border[focus]} onChange={value => setAttributes({ formFields: updateData(formFields, "input", value, "border", focus) })} />
 
     </PanelBody>
   );

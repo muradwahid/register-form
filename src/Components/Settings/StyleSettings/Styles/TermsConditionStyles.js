@@ -10,7 +10,7 @@ const TermsConditionStyles = ({ attributes, setAttributes }) => {
   const [device, setDevice] = useState("desktop");
   return (
     <PanelBody
-      title={__("Terms & Conditions", "b-blocks")}
+      title={__("Terms & Conditions", "register-form")}
       initialOpen={false}
     >
       <div className="rgfr-panelDevice">
@@ -20,7 +20,7 @@ const TermsConditionStyles = ({ attributes, setAttributes }) => {
           onChange={(value) => setDevice(value)}
         />
         <BoxControl className="boxControlWp"
-          label={__("Margin", "b-blocks")}
+          label={__("Margin", "register-form")}
           values={termsConditions.margin[device]}
           onChange={(value) =>
             setAttributes({
@@ -42,7 +42,7 @@ const TermsConditionStyles = ({ attributes, setAttributes }) => {
           onChange={(value) => setDevice(value)}
         />
         <BoxControl className="boxControlWp"
-          label={__("Padding", "b-blocks")}
+          label={__("Padding", "register-form")}
           values={termsConditions.padding[device]}
           onChange={(value) =>
             setAttributes({
@@ -65,7 +65,7 @@ const TermsConditionStyles = ({ attributes, setAttributes }) => {
           onChange={(value) => setDevice(value)}
         />
         <BoxControl className="boxControlWp"
-          label={__("Checkbox Margin", "b-blocks")}
+          label={__("Checkbox Margin", "register-form")}
           values={termsConditions.checkboxMargin[device]}
           onChange={(value) =>
             setAttributes({
@@ -80,15 +80,15 @@ const TermsConditionStyles = ({ attributes, setAttributes }) => {
         />
       </div>
 
-      <PanelColorPicker label={__("Color", "b-blocks")} value={termsConditions.color.text} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "text") })} />
+      <PanelColorPicker label={__("Color", "register-form")} value={termsConditions.color.text} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "text") })} />
 
-      <PanelColorPicker label={__("Link Color", "b-blocks")} value={termsConditions.color.link} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "link") })} />
+      <PanelColorPicker label={__("Link Color", "register-form")} value={termsConditions.color.link} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "link") })} />
 
-      <PanelColorPicker label={__("Background Color", "b-blocks")} value={termsConditions.color.bg} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "bg") })} />
+      <PanelColorPicker label={__("Background Color", "register-form")} value={termsConditions.color.bg} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "bg") })} />
 
-      <PanelColorPicker label={__("Checkbox", "b-blocks")} value={termsConditions.color.checkbox} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "checkbox") })} />
+      <PanelColorPicker label={__("Checkbox", "register-form")} value={termsConditions.color.checkbox} onChange={value => setAttributes({ termsConditions: updateData(termsConditions, "color", value, "checkbox") })} />
       <Typography
-        label={__("Typography", "b-blocks")}
+        label={__("Typography", "register-form")}
         value={termsConditions.typography}
         onChange={(value) =>
           setAttributes({

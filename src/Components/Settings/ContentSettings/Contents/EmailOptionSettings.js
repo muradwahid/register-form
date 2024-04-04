@@ -1,9 +1,9 @@
 import { Flex, FlexItem, PanelBody, SelectControl, TextControl } from '@wordpress/components';
-import React,{useState,Fragment} from 'react';
-import { Tab } from '../../../Panel/Tab/Tab';
 import { __ } from '@wordpress/i18n';
+import React, { Fragment, useState } from 'react';
 import { Label } from '../../../../../../Components';
 import { updateData } from '../../../../utils/functions';
+import { Tab } from '../../../Panel/Tab/Tab';
 import { TinyEditor } from '../../../Panel/TinyEditor/TinyEditor';
 
 const EmailOptionSettings = ({ attributes, setAttributes }) => {
@@ -11,7 +11,7 @@ const EmailOptionSettings = ({ attributes, setAttributes }) => {
   const [emailTab, setTab] = useState("user");
   return (
     <PanelBody
-      title={__("Register Email Options", "b-blocks")}
+      title={__("Register Email Options", "register-form")}
       initialOpen={false}
     >
       <Tab
@@ -19,7 +19,7 @@ const EmailOptionSettings = ({ attributes, setAttributes }) => {
         value={emailTab}
         onChange={(value) => setTab(value)}
       />
-      <Label>{__("Email Template Type", "b-blocks")}</Label>
+      <Label>{__("Email Template Type", "register-form")}</Label>
       <SelectControl
         options={[
           { label: "WordPress Default", value: "default" },
@@ -34,7 +34,7 @@ const EmailOptionSettings = ({ attributes, setAttributes }) => {
       />
       {emailOptions[emailTab].type === "custom" && (
         <Fragment>
-          <Label>{__("Email Subject", "b-blocks")}</Label>
+          <Label>{__("Email Subject", "register-form")}</Label>
           <TextControl
             value={emailOptions[emailTab].mail.subject}
             onChange={(value) =>
@@ -49,7 +49,7 @@ const EmailOptionSettings = ({ attributes, setAttributes }) => {
               })
             }
           />
-          <Label>{__("Email Message", "b-blocks")}</Label>
+          <Label>{__("Email Message", "register-form")}</Label>
           <TinyEditor
             value={emailOptions[emailTab].mail.message}
             default={emailOptions[emailTab].mail.message}
@@ -68,7 +68,7 @@ const EmailOptionSettings = ({ attributes, setAttributes }) => {
 
           <Flex>
             <FlexItem>
-              <Label>{__("Email Content Type", "b-blocks")}</Label>
+              <Label>{__("Email Content Type", "register-form")}</Label>
             </FlexItem>
             <FlexItem>
               <SelectControl

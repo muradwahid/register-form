@@ -1,7 +1,7 @@
 === Register Form ===
 Contributors: abuhayat
 Donate link: https://gum.co/wpdonate/
-Tags: block, key1, key2, key3, Gutenberg block
+Tags: block, register,form,register form, Gutenberg block
 Requires at least: 5.0+
 Tested up to: 6.3.1
 Stable tag: 1.0.0
@@ -9,11 +9,11 @@ Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Description of the Register Form
+Register Form Block Plugin is the ultimate solution for creating beautiful and functional user registration forms in WordPress.
 
 == Description ==
 
-- Register Form Block Plugin is the ultimate solution for creating beautiful and functional user registration forms in WordPress. With its block-based interface, customizable features, and robust security measures, you can easily enhance the user registration experience on your website.
+Register Form Block Plugin is the ultimate solution for creating beautiful and functional user registration forms in WordPress. With its block-based interface, customizable features, and robust security measures, you can easily enhance the user registration experience on your website.
 
 
 **[Demos](https://bblockswp.com/demo/register-form)**
@@ -60,18 +60,19 @@ Description of the Register Form
 
 🔥 **[b Blocks](https://bblockswp.com/)** – Best gutenberg blocks collections for WordPress.
 
-
 = ⭐ Check out our other WordPress Plugins- =
 
-🔥 **[Html5 Audio Player](https://audioplayerwp.com/)** – Best audio player plugin for WordPress.
+🔥 **[Html5 Audio Player](https://bplugins.com/products/html5-audio-player/)** – Play .mp3, .wav, and .ogg audio files in WordPress.
 
-🔥 **[Html5 Video Player](https://wpvideoplayer.com/)** – Best video player plugin for WordPress.
+🔥 **[Html5 Video Player](https://bplugins.com/products/html5-video-player/)** – Best video player plugin for WordPress.
 
-🔥 **[PDF Poster](http://pdfposter.com/)** – A fully-featured PDF Viewer Plugin for WordPress.
+🔥 **[PDF Poster](https://bplugins.com/products/pdf-poster/)** – A fully-featured PDF Viewer Plugin for WordPress.
 
-🔥 **[StreamCast](https://wordpress.org/plugins/streamcast)** – A fully-featured Radio Player Plugin for WordPress.
+🔥 **[Document Embedder](https://bplugins.com/products/document-embedder/)** – Embed Word, Excel, PowerPoint, Apple Pages, Psd, Pdf and more.
 
-🔥 **[3D Viewer](https://3d-viewer.bplugins.com/)** – Display interactive 3D models on the webs.
+🔥 **[3D Viewer](https://bplugins.com/products/3d-viewer/)** – Display interactive 3D models on the webs.
+
+🔥 **[Advanced Post Block](https://bplugins.com/products/advanced-post-block/)** – Display your Posts, Custom Post Content and Blogs in a professional way!
 
 
 == Installation ==
@@ -82,7 +83,7 @@ Description of the Register Form
 3. Click on the **Register Form** to add the block
 
 = Download & Upload: =
-1. Download the **Register Form** plugin (*.zip file*)
+1. Download the **Register Form** plugin (*register-form.zip file*)
 2. In your admin area, go to the Plugins menu and click on **Add New**
 3. Click on **Upload Plugin** and choose the **`plugin-slug.zip`** file and click on **Install Now**
 4. Activate the plugin and Enjoy!

@@ -9,7 +9,7 @@ Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Description of the Register Form
+Register Form Block Plugin is the ultimate solution for creating beautiful and functional user registration forms in WordPress.
 
 == Description ==
 

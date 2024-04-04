@@ -15,7 +15,7 @@ class RGFRRegisterForm{
 			'render_callback'	=> [$this, 'render']
 		] ); // Register Form
 
-		wp_set_script_translations( 'rgfr-hello-editor-script', 'b-blocks', RGFR_DIR_PATH . 'languages' );
+		wp_set_script_translations( 'rgfr-hello-editor-script', 'register-form', RGFR_DIR_PATH . 'languages' );
 	}
 
 	function render( $attributes ){
@@ -23,7 +23,7 @@ class RGFRRegisterForm{
 
 		wp_enqueue_style( 'rgfr-hello-style' );
 		wp_enqueue_script( 'rgfr-hello-script', RGFR_DIR_URL . 'dist/script.js', [ 'react', 'react-dom', 'wp-util' ], RGFR_VERSION, true );
-		wp_set_script_translations( 'rgfr-hello-script', 'b-blocks', RGFR_DIR_PATH . 'languages' );
+		wp_set_script_translations( 'rgfr-hello-script', 'register-form', RGFR_DIR_PATH . 'languages' );
 
 		$className = $className ?? '';
 		$blockClassName = "wp-block-b-blocks-register-form $className align$align";
@@ -112,7 +112,7 @@ class RGFRRegisterForm{
 				'first_name' => $data['firstName'],
 				'last_name' => $data['lastName'],
 				'user_url' => $data['website'],
-				'role' => $role,
+				'role' => $data['role'],
 			]);
 			
 			// $headers[] = 'From: Me Myself <me@example.net>';

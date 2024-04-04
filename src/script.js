@@ -16,6 +16,6 @@ container?.forEach(ele => {
 	const attributes = JSON.parse(ele.dataset.attributes);
 	const nonce = ele.dataset.nonce;
 	const root = createRoot(ele);
-	ele.removeAttribute("data-attributes");
+	ele?.removeAttribute("data-attributes");
 	root.render(<FrontEnd attributes={attributes} nonce={nonce} />);
 })

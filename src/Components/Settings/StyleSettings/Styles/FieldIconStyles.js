@@ -14,7 +14,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
   const { fieldIcons } = attributes;
   const [device, setDevice] = useState("desktop");
   return (
-    <PanelBody title={__("Form Icons", "b-blocks")} initialOpen={false}>
+    <PanelBody title={__("Form Icons", "register-form")} initialOpen={false}>
       <div className="mt10">
         <strong>Form Fields Icon</strong>
       </div>
@@ -27,7 +27,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Flex>
-            <Label className="mb5">{__("Icon Size", "b-blocks")}</Label>
+            <Label className="mb5">{__("Icon Size", "register-form")}</Label>
           </Flex>
           <UnitControl
             className="rgfr-unitControl"
@@ -48,7 +48,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
       </div>
 
       <PanelColorPicker
-        label={__("Open Eye Color", "b-blocks")}
+        label={__("Open Eye Color", "register-form")}
         value={fieldIcons.icon.color}
         onChange={(value) =>
           setAttributes({
@@ -71,7 +71,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Vertical Alignment", "b-blocks")}
+            {__("Vertical Alignment", "register-form")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"
@@ -102,7 +102,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Horizontal Alignment", "b-blocks")}
+            {__("Horizontal Alignment", "register-form")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"
@@ -131,13 +131,13 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
       <div className="rgfr-panelDevice mt15">
         <Device
           className="rgfr-device"
-          style={{top:"4px"}}
+          style={{ top: "4px" }}
           value={device}
           onChange={(value) => setDevice(value)}
         />
         <Flex align="center" justify="space-between">
           <Flex>
-            <Label className="mb5">{__("Icon Size", "b-blocks")}</Label>
+            <Label className="mb5">{__("Icon Size", "register-form")}</Label>
           </Flex>
           <UnitControl
             className="rgfr-unitControl"
@@ -157,7 +157,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
         </Flex>
       </div>
       <PanelColorPicker
-        label={__("Open Eye Color", "b-blocks")}
+        label={__("Open Eye Color", "register-form")}
         value={fieldIcons.passVisibility.openColor}
         onChange={(value) =>
           setAttributes({
@@ -172,7 +172,7 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
       />
 
       <PanelColorPicker
-        label={__("Close Eye Color", "b-blocks")}
+        label={__("Close Eye Color", "register-form")}
         value={fieldIcons.passVisibility.closeColor}
         onChange={(value) =>
           setAttributes({
@@ -188,14 +188,14 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
 
       <div className="rgfr-panelDevice mt15">
         <Device
-          style={{ position: "absolute", left: "110px",top:"4px", zIndex: 333 }}
+          style={{ position: "absolute", left: "110px", top: "4px", zIndex: 333 }}
           value={device}
           onChange={(value) => setDevice(value)}
           position="vertical"
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Vertical Alignment", "b-blocks")}
+            {__("Vertical Alignment", "register-form")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"
@@ -219,14 +219,14 @@ const FieldIconStyles = ({ attributes, setAttributes }) => {
 
       <div className="rgfr-panelDevice mt15">
         <Device
-          style={{ position: "absolute", left: "125px",top:"4px", zIndex: 7 }}
+          style={{ position: "absolute", left: "125px", top: "4px", zIndex: 7 }}
           value={device}
           onChange={(value) => setDevice(value)}
           position="vertical"
         />
         <Flex align="center" justify="space-between">
           <Label className="mb5">
-            {__("Horizontal Alignment", "b-blocks")}
+            {__("Horizontal Alignment", "register-form")}
           </Label>
           <UnitControl
             className="rgfr-unitControl"

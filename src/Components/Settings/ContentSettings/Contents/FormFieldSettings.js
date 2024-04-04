@@ -8,11 +8,11 @@ import passIcon from '../../../../../assets/icon/lock-solid.svg';
 import userIcon from "../../../../../assets/icon/user-solid.svg";
 import { updateData } from '../../../../utils/functions';
 import { addInputFieldOptions, inputFieldOptions } from '../../../../utils/options';
+import Device from '../../../Panel/Device/Device';
+import MediaArea from '../../../Panel/MediaArea/MediaArea';
 import PanelInputControl from '../../../Panel/PanelInputControl/PanelInputControl';
 import { PanelRepeater } from '../../../Panel/PanelRepeater/PanelRepeater';
 import WeakPassword from './WeakPassword';
-import Device from '../../../Panel/Device/Device';
-import MediaArea from '../../../Panel/MediaArea/MediaArea';
 const FormFieldSettings = ({ attributes, setAttributes }) => {
   const { formFields, password } = attributes;
   const handleIcon = (type) => {
@@ -60,7 +60,7 @@ const FormFieldSettings = ({ attributes, setAttributes }) => {
 
   return (
     <Fragment>
-      <PanelBody title={__("Form Fields", "b-blocks")} initialOpen={false}>
+      <PanelBody title={__("Form Fields", "register-form")} initialOpen={false}>
         <p>Fields</p>
         {
           formFields.fields.map((val, i) => <PanelRepeater key={i} index={i} length={formFields.fields.length} copy={true} delete={true} handleDelete={handleDelete} title={val.label.text} >
@@ -76,16 +76,16 @@ const FormFieldSettings = ({ attributes, setAttributes }) => {
               <Label className='mb10'>Placeholder</Label>
               <TextControl className='controller-width' value={val.placeholder.text} onChange={(value) => updateRepeaterData(i, "placeholder", value, "text")} />
             </PanelRow>
-            <ToggleControl label={__("Required", "b-blocks")} value={val.required} checked={val.required} onChange={(value) => updateRepeaterData(i, "required", value)} />
+            <ToggleControl label={__("Required", "register-form")} value={val.required} checked={val.required} onChange={(value) => updateRepeaterData(i, "required", value)} />
             <PanelRow>
               <Flex justify='flex-start' gap="0px">
-                <Label className="mb10">{__("Field Width", "b-blocks")}</Label>
+                <Label className="mb10">{__("Field Width", "register-form")}</Label>
                 <Device className='mb10' value={val.device} onChange={(value) => updateRepeaterData(i, "device", value)} />
               </Flex>
               <UnitControl units={[{ label: "%", value: "%", default: "100" }]} max={100} style={{ width: "60px" }} value={val.width[val.device]} onChange={(value) => updateRepeaterData(i, "width", value, val.device)} />
             </PanelRow>
-            <Label>{__("Icon", "b-blocks")}</Label>
-            <MediaArea types="image/svg+xml" default={handleIcon(val.type)} label={__("Select SVG", "b-blocks")} value={val.icon.url} onChange={(value) => updateRepeaterData(i, "icon", value, "url")} />
+            <Label>{__("Icon", "register-form")}</Label>
+            <MediaArea types="image/svg+xml" default={handleIcon(val.type)} label={__("Select SVG", "register-form")} value={val.icon.url} onChange={(value) => updateRepeaterData(i, "icon", value, "url")} />
           </PanelRepeater>)
         }
         <div className='panelInputFieldAddButton'>
@@ -93,18 +93,18 @@ const FormFieldSettings = ({ attributes, setAttributes }) => {
         </div>
 
         <hr />
-        <ToggleControl label={__("Show Label", "b-blocks")} value={formFields.showLabel} checked={formFields.showLabel} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showLabel", value) })} />
+        <ToggleControl label={__("Show Label", "register-form")} value={formFields.showLabel} checked={formFields.showLabel} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showLabel", value) })} />
         {
-          formFields.showLabel && <ToggleControl label={__("Show Required Mark", "b-blocks")} value={formFields.showRequiredMark} checked={formFields.showRequiredMark} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showRequiredMark", value) })} />
+          formFields.showLabel && <ToggleControl label={__("Show Required Mark", "register-form")} value={formFields.showRequiredMark} checked={formFields.showRequiredMark} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showRequiredMark", value) })} />
         }
 
-        <ToggleControl label={__("Password Visibility Icon", "b-blocks")} value={formFields.passVisibilityIcon} checked={formFields.passVisibilityIcon} onChange={(value) => setAttributes({ formFields: updateData(formFields, "passVisibilityIcon", value) })} />
+        <ToggleControl label={__("Password Visibility Icon", "register-form")} value={formFields.passVisibilityIcon} checked={formFields.passVisibilityIcon} onChange={(value) => setAttributes({ formFields: updateData(formFields, "passVisibilityIcon", value) })} />
 
-        <ToggleControl label={__("Show Field Icons", "b-blocks")} value={formFields.fieldIcons} checked={formFields.fieldIcons} onChange={(value) => setAttributes({ formFields: updateData(formFields, "fieldIcons", value) })} />
+        <ToggleControl label={__("Show Field Icons", "register-form")} value={formFields.fieldIcons} checked={formFields.fieldIcons} onChange={(value) => setAttributes({ formFields: updateData(formFields, "fieldIcons", value) })} />
 
-        <ToggleControl label={__("Show Password Strength Meter", "b-blocks")} value={formFields.showPassStrengthMeter} checked={formFields.showPassStrengthMeter} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showPassStrengthMeter", value) })} />
+        <ToggleControl label={__("Show Password Strength Meter", "register-form")} value={formFields.showPassStrengthMeter} checked={formFields.showPassStrengthMeter} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showPassStrengthMeter", value) })} />
 
-        <ToggleControl label={__("Show Password Strength Text", "b-blocks")} value={formFields.showPassStrengthText} checked={formFields.showPassStrengthText} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showPassStrengthText", value) })} />
+        <ToggleControl label={__("Show Password Strength Text", "register-form")} value={formFields.showPassStrengthText} checked={formFields.showPassStrengthText} onChange={(value) => setAttributes({ formFields: updateData(formFields, "showPassStrengthText", value) })} />
 
         {
           formFields.showPassStrengthText && <Fragment>
@@ -112,19 +112,19 @@ const FormFieldSettings = ({ attributes, setAttributes }) => {
               align="center"
               justify="space-between"
             >
-              <Label className="mb10">{__("Password Strength Text", "b-blocks")}</Label>
+              <Label className="mb10">{__("Password Strength Text", "register-form")}</Label>
               <SelectControl options={[{ label: "Default", value: "default" }, { label: "Custom", value: "custom" }]} value={formFields.passStrengthText} onChange={(value) => setAttributes({ formFields: updateData(formFields, "passStrengthText", value) })} />
             </Flex>
             {
               formFields.passStrengthText === "custom" &&
               <Fragment>
-                <PanelInputControl className="width130" label={__("Very Weak Password", "b-blocks")} value={password.passStrengthTxt.veryWeak} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "veryWeak") })} />
+                <PanelInputControl className="width130" label={__("Very Weak Password", "register-form")} value={password.passStrengthTxt.veryWeak} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "veryWeak") })} />
 
-                <PanelInputControl className="width130" label={__("Weak Password", "b-blocks")} value={password.passStrengthTxt.weak} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "weak") })} />
+                <PanelInputControl className="width130" label={__("Weak Password", "register-form")} value={password.passStrengthTxt.weak} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "weak") })} />
 
-                <PanelInputControl className="width130" label={__("Medium Password", "b-blocks")} value={password.passStrengthTxt.medium} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "medium") })} />
+                <PanelInputControl className="width130" label={__("Medium Password", "register-form")} value={password.passStrengthTxt.medium} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "medium") })} />
 
-                <PanelInputControl className="width130" label={__("Strong Password", "b-blocks")} value={password.passStrengthTxt.strong} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "strong") })} />
+                <PanelInputControl className="width130" label={__("Strong Password", "register-form")} value={password.passStrengthTxt.strong} onChange={(value) => setAttributes({ password: updateData(password, "passStrengthTxt", value, "strong") })} />
 
               </Fragment>
             }

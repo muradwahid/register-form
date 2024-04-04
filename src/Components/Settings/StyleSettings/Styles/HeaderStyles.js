@@ -16,7 +16,7 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
 
   return (
     <Fragment>
-      <PanelBody title={__("Form Header", "b-blocks")} initialOpen={false}>
+      <PanelBody title={__("Form Header", "register-form")} initialOpen={false}>
         <Tab options={["Header Content", "Logo", "Image"]} paddingX={6} value={headerTab} onChange={value => setHeaderTab(value)} />
 
         {
@@ -27,7 +27,7 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
                 align="center"
                 justify="space-between"
               >
-                <Label className='mb5'>{__("Width", "b-blocks")}</Label>
+                <Label className='mb5'>{__("Width", "register-form")}</Label>
                 <UnitControl className="rgfr-unitControl" units={[{ label: "%", value: "%", default: "100" }, { label: "px", value: "px" }, { label: "rem", value: "rem" }]} value={formHeader.header.width[device]} min={0} max={formHeader.header.width[device] && formHeader.header.width[device]?.includes("%") ? 100 : 1200} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "width", device) })} />
               </Flex>
             </div>
@@ -38,24 +38,24 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
                 align="center"
                 justify="space-between"
               >
-                <Label className='mb5'>{__("Height", "b-blocks")}</Label>
+                <Label className='mb5'>{__("Height", "register-form")}</Label>
                 <UnitControl className="rgfr-unitControl" units={[{ label: "px", value: "px" }, { label: "%", value: "%" }, { label: "rem", value: "rem" }]} value={formHeader.header.height[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "height", device) })} />
               </Flex>
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={formHeader.header.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "margin", device) })} />
+              <BoxControl className="boxControlWp" label={__("Margin", "register-form")} values={formHeader.header.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "margin", device) })} />
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={formHeader.header.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "padding", device) })} />
+              <BoxControl className="boxControlWp" label={__("Padding", "register-form")} values={formHeader.header.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "padding", device) })} />
             </div>
 
-            <BorderControl label={__("Border", "b-blocks")} value={formHeader.header.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "border") })} />
+            <BorderControl label={__("Border", "register-form")} value={formHeader.header.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "border") })} />
 
-            <Background label={__("Background", "b-blocks")} value={formHeader.header.bg} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "bg") })} />
+            <Background label={__("Background", "register-form")} value={formHeader.header.bg} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "bg") })} />
           </Fragment>
         }
 
@@ -67,7 +67,7 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
                 align="center"
                 justify="space-between"
               >
-                <Label className='mb5'>{__("Width", "b-blocks")}</Label>
+                <Label className='mb5'>{__("Width", "register-form")}</Label>
                 <UnitControl className="rgfr-unitControl" units={[{ label: "%", value: "%", default: "100" }, { label: "px", value: "px" }, { label: "rem", value: "rem" }]} value={formHeader.header.logo.width[device]} min={0} max={formHeader.header.logo.width[device].includes("%") ? 100 : 1200} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "width", device) })} />
               </Flex>
             </div>
@@ -78,23 +78,23 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
                 align="center"
                 justify="space-between"
               >
-                <Label className='mb5'>{__("Height", "b-blocks")}</Label>
+                <Label className='mb5'>{__("Height", "register-form")}</Label>
                 <UnitControl className="rgfr-unitControl" units={[{ label: "px", value: "px" }, { label: "%", value: "%" }, { label: "rem", value: "rem" }]} value={formHeader.header.logo.height[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "height", device) })} />
               </Flex>
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={formHeader.header.logo.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "margin", device) })} />
+              <BoxControl className="boxControlWp" label={__("Margin", "register-form")} values={formHeader.header.logo.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "margin", device) })} />
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={formHeader.header.logo.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "padding", device) })} />
+              <BoxControl className="boxControlWp" label={__("Padding", "register-form")} values={formHeader.header.logo.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "padding", device) })} />
             </div>
 
-            <BorderControl label={__("Border", "b-blocks")} value={formHeader.header.logo.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "border") })} />
-            <MultiShadowControl label={__("Shadow", "b-blocks")} value={formHeader.header.logo.shadow} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "shadow") })} />
+            <BorderControl label={__("Border", "register-form")} value={formHeader.header.logo.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "border") })} />
+            <MultiShadowControl label={__("Shadow", "register-form")} value={formHeader.header.logo.shadow} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "logo", "shadow") })} />
           </Fragment>
         }
 
@@ -106,7 +106,7 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
                 align="center"
                 justify="space-between"
               >
-                <Label className='mb5'>{__("Width", "b-blocks")}</Label>
+                <Label className='mb5'>{__("Width", "register-form")}</Label>
                 <UnitControl className="rgfr-unitControl" units={[{ label: "em", value: "em", default: "100" }, { label: "px", value: "px" }, { label: "rem", value: "rem" }]} value={formHeader.image.width[device]} min={0} max={formHeader.image.width[device].includes("%") ? 100 : 1200} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "width", device) })} />
               </Flex>
             </div>
@@ -117,22 +117,22 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
                 align="center"
                 justify="space-between"
               >
-                <Label className='mb5'>{__("Height", "b-blocks")}</Label>
+                <Label className='mb5'>{__("Height", "register-form")}</Label>
                 <UnitControl className="rgfr-unitControl" units={[{ label: "px", value: "px" }, { label: "%", value: "%" }, { label: "rem", value: "rem" }]} value={formHeader.image.height[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "height", device) })} />
               </Flex>
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={formHeader.image.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "margin", device) })} />
+              <BoxControl className="boxControlWp" label={__("Margin", "register-form")} values={formHeader.image.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "margin", device) })} />
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={formHeader.image.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "padding", device) })} />
+              <BoxControl className="boxControlWp" label={__("Padding", "register-form")} values={formHeader.image.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "padding", device) })} />
             </div>
 
-            <BorderControl label={__("Border", "b-blocks")} value={formHeader.image.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "border") })} />
+            <BorderControl label={__("Border", "register-form")} value={formHeader.image.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "image", value, "border") })} />
           </Fragment>
         }
         <hr />
@@ -141,23 +141,23 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
           subTab === "title" && <Fragment>
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={formHeader.header.title.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "margin", device) })} />
+              <BoxControl className="boxControlWp" label={__("Margin", "register-form")} values={formHeader.header.title.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "margin", device) })} />
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
 
-              <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={formHeader.header.title.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "padding", device) })} />
+              <BoxControl className="boxControlWp" label={__("Padding", "register-form")} values={formHeader.header.title.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "padding", device) })} />
             </div>
 
-            <PanelColorPicker label={__("Color", "b-blocks")} value={formHeader.header.title.color} onChange={(value) => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "color") })} />
+            <PanelColorPicker label={__("Color", "register-form")} value={formHeader.header.title.color} onChange={(value) => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "color") })} />
 
-            <Background label={__("Background", "b-blocks")} isImage={false} value={formHeader.header.title.bg} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "bg") })} />
+            <Background label={__("Background", "register-form")} isImage={false} value={formHeader.header.title.bg} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "bg") })} />
 
 
-            <BorderControl label={__("Border", "b-blocks")} value={formHeader.header.title.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "border") })} />
+            <BorderControl label={__("Border", "register-form")} value={formHeader.header.title.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "border") })} />
 
-            <Typography label={__("Typography", "b-blocks")} value={formHeader.header.title.typography} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "typography") })} />
+            <Typography label={__("Typography", "register-form")} value={formHeader.header.title.typography} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "title", "typography") })} />
           </Fragment>
         }
 
@@ -165,23 +165,23 @@ const HeaderStyles = ({ attributes, setAttributes }) => {
           subTab === "subtitle" && <Fragment>
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
-              <BoxControl className="boxControlWp" label={__("Margin", "b-blocks")} values={formHeader.header.subTitle.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "margin", device) })} />
+              <BoxControl className="boxControlWp" label={__("Margin", "register-form")} values={formHeader.header.subTitle.margin[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "margin", device) })} />
             </div>
 
             <div className="rgfr-panelDevice">
               <Device className='rgfr-device' value={device} onChange={value => setDevice(value)} />
 
-              <BoxControl className="boxControlWp" label={__("Padding", "b-blocks")} values={formHeader.header.subTitle.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "padding", device) })} />
+              <BoxControl className="boxControlWp" label={__("Padding", "register-form")} values={formHeader.header.subTitle.padding[device]} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "padding", device) })} />
             </div>
 
-            <PanelColorPicker label={__("Color", "b-blocks")} value={formHeader.header.subTitle.color} onChange={(value) => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "color") })} />
+            <PanelColorPicker label={__("Color", "register-form")} value={formHeader.header.subTitle.color} onChange={(value) => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "color") })} />
 
-            <Background label={__("Background", "b-blocks")} isImage={false} value={formHeader.header.subTitle.bg} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "bg") })} />
+            <Background label={__("Background", "register-form")} isImage={false} value={formHeader.header.subTitle.bg} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "bg") })} />
 
 
-            <BorderControl label={__("Border", "b-blocks")} value={formHeader.header.subTitle.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "border") })} />
+            <BorderControl label={__("Border", "register-form")} value={formHeader.header.subTitle.border} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "border") })} />
 
-            <Typography label={__("Typography", "b-blocks")} value={formHeader.header.subTitle.typography} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "typography") })} />
+            <Typography label={__("Typography", "register-form")} value={formHeader.header.subTitle.typography} onChange={value => setAttributes({ formHeader: updateData(formHeader, "header", value, "subTitle", "typography") })} />
           </Fragment>
         }
       </PanelBody>

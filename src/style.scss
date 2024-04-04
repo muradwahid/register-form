@@ -9,18 +9,19 @@ html {
   font-family: dashicons !important;
 }
 // Block Name
-.wp-block-b-blocks-register-form {
+.wp-block-b-blocks-register-form{
   * {
     box-sizing: border-box;
   }
   display: flex;
   .rgfr-register-form-main-wrapper {
+    overflow: hidden;
     .rgfr-register-form {
       display: flex;
       box-sizing: border-box;
       .rgfr-registerForm-container {
         .rgfr-register-form-wrapper {
-          width: inherit;
+          // width: inherit;
           box-sizing: border-box;
           padding: 10px;
           .rgfr-register-logo-wrapper {
@@ -313,7 +314,7 @@ html {
           }
         }
         .rgfr-successMessage {
-          margin:10px;
+          margin: 10px;
           border-left: 2px solid blue;
           padding: 0 5px;
           font-size: 14px;

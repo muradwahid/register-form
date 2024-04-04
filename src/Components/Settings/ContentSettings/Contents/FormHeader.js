@@ -1,25 +1,25 @@
 import { Flex, PanelBody, TextControl, TextareaControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
+import { updateData } from '../../../../utils/functions';
+import { bottomIcon, leftIcon, rightIcon, topIcon } from '../../../../utils/icons';
 import Device from '../../../Panel/Device/Device';
 import MediaArea from '../../../Panel/MediaArea/MediaArea';
 import { PanelAlign } from '../../../Panel/PanelAlign/PanelAlign';
-import { updateData } from '../../../../utils/functions';
-import { bottomIcon, leftIcon, rightIcon, topIcon } from '../../../../utils/icons';
 
 const FormHeader = ({ attributes, setAttributes }) => {
-  const {formHeader} = attributes;
+  const { formHeader } = attributes;
   const [device, setDevice] = useState("desktop");
 
   return (
-    <PanelBody title={__("Form Header", "b-blocks")} initialOpen={true}>
+    <PanelBody title={__("Form Header", "register-form")} initialOpen={true}>
       <Flex align="center" gap={5} justify="start">
         <p>Form Header Image</p>
         <Device className="mb10" value={device} onChange={value => setDevice(value)} />
       </Flex>
       <MediaArea
         style={{ marginBottom: "15px" }}
-        label={__("Choose Image", "b-blocks")}
+        label={__("Choose Image", "register-form")}
         value={formHeader.image[device]}
         width="100%"
         height="100%"
@@ -32,7 +32,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
       />
 
       {/* <PanelRow>
-          <Label className="mb10">{__("Image Size", "b-blocks")}</Label>
+          <Label className="mb10">{__("Image Size", "register-form")}</Label>
           <SelectControl
             value={formHeader.image.resolution}
             options={imageSizeOptions}
@@ -52,7 +52,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
       {/* {formHeader.image.resolution === "custom" && (
           <>
             <PanelRow>
-              <Label className="mb10">{__("Width", "b-blocks")}</Label>
+              <Label className="mb10">{__("Width", "register-form")}</Label>
               <UnitControl
                 value={formHeader.image.width}
                 onChange={(value) =>
@@ -64,7 +64,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
             </PanelRow>
 
             <PanelRow>
-              <Label className="mb10">{__("Height", "b-blocks")}</Label>
+              <Label className="mb10">{__("Height", "register-form")}</Label>
               <UnitControl
                 value={formHeader.image.height}
                 onChange={(value) =>
@@ -82,7 +82,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
           </>
         )} */}
       <PanelAlign
-        label={__("Image Position", "b-blocks")}
+        label={__("Image Position", "register-form")}
         icons={device === "desktop" ? [
           { label: "left", value: leftIcon },
           { label: "right", value: rightIcon },
@@ -108,7 +108,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
       <p>Form Header Logo</p>
       <MediaArea
         style={{ marginBottom: "15px" }}
-        label={__("Choose Logo", "b-blocks")}
+        label={__("Choose Logo", "register-form")}
         value={formHeader.header.logo.url}
         width="100%"
         height="100%"
@@ -117,7 +117,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
       />
 
       {/* <PanelRow>
-          <Label className="mb10">{__("Logo Size", "b-blocks")}</Label>
+          <Label className="mb10">{__("Logo Size", "register-form")}</Label>
           <SelectControl
             value={formHeader.header.logo.resolution}
             options={imageSizeOptions}
@@ -132,7 +132,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
         {formHeader.header.logo.resolution === "custom" && (
           <>
             <PanelRow>
-              <Label className="mb10">{__("Width", "b-blocks")}</Label>
+              <Label className="mb10">{__("Width", "register-form")}</Label>
               <UnitControl
                 value={formHeader.header.logo.width}
                 onChange={(value) =>
@@ -144,7 +144,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
             </PanelRow>
 
             <PanelRow>
-              <Label className="mb10">{__("Height", "b-blocks")}</Label>
+              <Label className="mb10">{__("Height", "register-form")}</Label>
               <UnitControl
                 value={formHeader.header.logo.height}
                 onChange={(value) =>
@@ -157,7 +157,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
           </>
         )} */}
       <PanelAlign
-        label={__("Logo Position", "b-blocks")}
+        label={__("Logo Position", "register-form")}
         labelPosition="top"
         icons={[
           { label: "left", value: leftIcon },
@@ -174,7 +174,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
       />
       <hr />
       <TextControl
-        label={__("Form Title", "b-blocks")}
+        label={__("Form Title", "register-form")}
         value={formHeader.header.title.text}
         onChange={(value) =>
           setAttributes({
@@ -184,7 +184,7 @@ const FormHeader = ({ attributes, setAttributes }) => {
         placeholder="Create a New Account"
       />
       <TextareaControl
-        label={__("Form Sub Title", "b-blocks")}
+        label={__("Form Sub Title", "register-form")}
         value={formHeader.header.subTitle.text}
         onChange={(value) =>
           setAttributes({

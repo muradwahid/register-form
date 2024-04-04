@@ -14,7 +14,7 @@ const MessageStyles = ({ attributes, setAttributes }) => {
   const { validation } = attributes;
   const [message, setMessage] = useState("success");
   return (
-    <PanelBody title={__("Messages", "b-blocks")} initialOpen={false}>
+    <PanelBody title={__("Messages", "register-form")} initialOpen={false}>
       <Tab
         options={["Success", "Error"]}
         value={message}
@@ -23,7 +23,7 @@ const MessageStyles = ({ attributes, setAttributes }) => {
       {message === "success" && (
         <Fragment>
           <ToggleControl
-            label={__("Show success message", "b-blocks")}
+            label={__("Show success message", "register-form")}
             checked={validation.success.styles.isShow}
             value={validation.success.styles.isShow}
             onChange={(val) =>
@@ -41,7 +41,7 @@ const MessageStyles = ({ attributes, setAttributes }) => {
           {
             validation.success.styles.isShow && <Fragment>
               <BoxControl
-                label={__("Padding", "b-blocks")}
+                label={__("Padding", "register-form")}
                 values={validation.success.styles.padding}
                 onChange={(val) =>
                   setAttributes({
@@ -56,7 +56,7 @@ const MessageStyles = ({ attributes, setAttributes }) => {
                 }
               />
               <BoxControl
-                label={__("Margin", "b-blocks")}
+                label={__("Margin", "register-form")}
                 values={validation.success.styles.margin}
                 onChange={(val) =>
                   setAttributes({
@@ -70,13 +70,13 @@ const MessageStyles = ({ attributes, setAttributes }) => {
                   })
                 }
               />
-              <PanelColorPicker label={__("Color", "b-blocks")} value={validation.success.styles.color.text} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "color", "text") })} />
+              <PanelColorPicker label={__("Color", "register-form")} value={validation.success.styles.color.text} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "color", "text") })} />
 
-              <Background label={__("Background", "b-blocks")} isImage={false} value={validation.success.styles.color.bg} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "color", "bg") })} />
+              <Background label={__("Background", "register-form")} isImage={false} value={validation.success.styles.color.bg} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "color", "bg") })} />
 
-              <Typography label={__("Typography", "b-blocks")} value={validation.success.styles.typo} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "typo") })} />
+              <Typography label={__("Typography", "register-form")} value={validation.success.styles.typo} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "typo") })} />
 
-              <BorderControl label={__("Border", "b-blocks")} value={validation.success.styles.border} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "border") })} />
+              <BorderControl label={__("Border", "register-form")} value={validation.success.styles.border} onChange={val => setAttributes({ validation: updateData(validation, "success", val, "styles", "border") })} />
             </Fragment>
           }
 
@@ -85,7 +85,7 @@ const MessageStyles = ({ attributes, setAttributes }) => {
       {
         message === "error" && <Fragment>
           <BoxControl
-            label={__("Margin", "b-blocks")}
+            label={__("Margin", "register-form")}
             values={validation.error.styles.margin}
             onChange={(val) =>
               setAttributes({
@@ -100,9 +100,9 @@ const MessageStyles = ({ attributes, setAttributes }) => {
             }
           />
 
-          <PanelColorPicker label={__("Color", "b-blocks")} value={validation.error.styles.color} onChange={val => setAttributes({ validation: updateData(validation, "error", val, "styles", "color") })} />
+          <PanelColorPicker label={__("Color", "register-form")} value={validation.error.styles.color} onChange={val => setAttributes({ validation: updateData(validation, "error", val, "styles", "color") })} />
 
-          <Typography label={__("Typography", "b-blocks")} value={validation.error.styles.typo} onChange={val => setAttributes({ validation: updateData(validation, "error", val, "styles", "typo") })} />
+          <Typography label={__("Typography", "register-form")} value={validation.error.styles.typo} onChange={val => setAttributes({ validation: updateData(validation, "error", val, "styles", "typo") })} />
         </Fragment>
       }
     </PanelBody>

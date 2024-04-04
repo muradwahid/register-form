@@ -5,7 +5,7 @@
   "description": "Register more users and improve engagement in WordPress.",
   "category": "widgets",
   "keywords": ["register", "form", "register form"],
-  "textdomain": "b-blocks",
+  "textdomain": "register-form",
   "attributes": {
     "align": {
       "type": "string",
@@ -349,7 +349,7 @@
     "formOptions": {
       "type": "object",
       "default": {
-        "isRedirect":true,
+        "isRedirect": true,
         "customUrl": "http://localhost/login",
         "redirectPrevious": false,
         "userRole": "subscriber"
@@ -412,21 +412,25 @@
             "missing": "Password is missing",
             "custom": ""
           },
-          "styles":{
-            "typo":{ "fontSize": { "desktop": 11, "tablet": 11, "mobile": 11 } },
-            "color":"",
-            "margin":{}
+          "styles": {
+            "typo": {
+              "fontSize": { "desktop": 11, "tablet": 11, "mobile": 11 }
+            },
+            "color": "",
+            "margin": {}
           }
         },
         "success": {
-          "text":"Registration completed successfully",
-          "styles":{
-            "isShow":false,
-            "typo":{ "fontSize": { "desktop": 14, "tablet": 14, "mobile": 14 } },
-            "color":{"text":"","bg":{}},
-            "margin":{},
-            "padding":{},
-            "border":{"side":"left","color":"#00F","width":"2px"}
+          "text": "Registration completed successfully",
+          "styles": {
+            "isShow": false,
+            "typo": {
+              "fontSize": { "desktop": 14, "tablet": 14, "mobile": 14 }
+            },
+            "color": { "text": "", "bg": {} },
+            "margin": {},
+            "padding": {},
+            "border": { "side": "left", "color": "#00F", "width": "2px" }
           }
         }
       }
